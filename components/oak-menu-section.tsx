@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import { ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 interface MenuItem {
-  name: string
-  description: string
-  price: string
-  image?: string
-  isSpecial?: boolean
-  isNew?: boolean
+  name: string;
+  description: string;
+  price: string;
+  image?: string;
+  isSpecial?: boolean;
+  isNew?: boolean;
 }
 
 const menuData: Record<string, MenuItem[]> = {
@@ -20,27 +20,28 @@ const menuData: Record<string, MenuItem[]> = {
     // Chicken
     {
       name: "Stir-fried Chicken",
-      description: "Tender chicken pieces stir-fried with vegetables and aromatic spices",
+      description:
+        "Tender chicken pieces stir-fried with vegetables and aromatic spices",
       price: "675",
-      image: "/stir-fried-chicken.png",
+      image: "/Stir-fried Chiken.webp",
     },
     {
       name: "Chicken Wings in Honey Sauce",
       description: "Crispy chicken wings glazed with sweet honey sauce",
       price: "455",
-      image: "/chicken-wings-in-honey-sauce.png",
+      image: "/chiken wings in honey sauce.webp",
     },
     {
       name: "Chicken Drumstick",
       description: "Grilled chicken drumstick with herbs and spices",
       price: "410",
-      image: "/chicken-drumstick.png",
+      image: "/chicken drumsticks.webp",
     },
     {
       name: "Chicken Kebab with French Fries",
       description: "Marinated chicken kebab served with crispy French fries",
       price: "399",
-      image: "/chicken-kebab-with-french-fries.png",
+      image: "/chicken kebab with fries.webp",
     },
     // Beef
     {
@@ -51,21 +52,23 @@ const menuData: Record<string, MenuItem[]> = {
     },
     {
       name: "Beef Wrap",
-      description: "Beef fillet with onion, garlic, green chili, cream, cheese served with French fries",
+      description:
+        "Beef fillet with onion, garlic, green chili, cream, cheese served with French fries",
       price: "450",
-      image: "/beef-wrap.png",
+      image: "/beef wrap.webp",
     },
     {
       name: "Two Mini Beef Burger",
-      description: "Minced beef, egg, garlic, bread crumbs, mixed spice, with French fries",
+      description:
+        "Minced beef, egg, garlic, bread crumbs, mixed spice, with French fries",
       price: "750",
-      image: "/two-mini-beef-burger.png",
+      image: "/two mini beef burger.webp",
     },
     {
       name: "Meat Kebab with French Fries",
       description: "Grilled meat kebab served with crispy French fries",
       price: "399",
-      image: "/meat-kebab-with-french-fries.png",
+      image: "/meat kebab.webp",
     },
     // Fish
     {
@@ -78,7 +81,7 @@ const menuData: Record<string, MenuItem[]> = {
       name: "Fish Finger with French Fries",
       description: "Crispy fish fingers served with French fries",
       price: "500",
-      image: "/fish-finger-with-french-fries.png",
+      image: "/fish finger with french fries.webp",
     },
     {
       name: "Fish Amritsari",
@@ -97,7 +100,7 @@ const menuData: Record<string, MenuItem[]> = {
       name: "Vegetable Soup",
       description: "Fresh vegetable soup with herbs",
       price: "320",
-      image: "/vegetable-soup.png",
+      image: "/Vegetable Soup.webp",
     },
     // National Corner
     {
@@ -129,7 +132,7 @@ const menuData: Record<string, MenuItem[]> = {
       name: "Spaghetti Bolognese",
       description: "Italian pasta with meat sauce",
       price: "480",
-      image: "/spaghetti-bolognese.png",
+      image: "/spaghetti-bologna.webp",
     },
     {
       name: "Spaghetti Aglio e Olio",
@@ -142,13 +145,13 @@ const menuData: Record<string, MenuItem[]> = {
       name: "Classic Beef Burger",
       description: "Beef patty with lettuce, tomato, onion, and special sauce",
       price: "550",
-      image: "/classic-beef-burger.png",
+      image: "/Beef Burger.webp",
     },
     {
       name: "Chicken Burger",
       description: "Grilled chicken breast with fresh vegetables",
       price: "480",
-      image: "/chicken-burger.png",
+      image: "/cheese-burger.webp",
     },
     {
       name: "Vegetarian Burger",
@@ -165,41 +168,44 @@ const menuData: Record<string, MenuItem[]> = {
     },
     {
       name: "Chicken Wrap",
-      description: "Grilled chicken, onion, garlic, green chili, fresh cream, cheese served with French fries",
+      description:
+        "Grilled chicken, onion, garlic, green chili, fresh cream, cheese served with French fries",
       price: "350",
-      image: "/chicken-wrap.png",
+      image: "/chicken wrap.webp",
     },
     {
       name: "Vegetable Wrap",
-      description: "Seasonal vegetables, onion, garlic, green chili, fresh cream, cheese served with French fries",
+      description:
+        "Seasonal vegetables, onion, garlic, green chili, fresh cream, cheese served with French fries",
       price: "400",
-      image: "/vegetable-wrap.png",
+      image: "/vegetable wrap.webp",
     },
   ],
-  "breakfast": [
+  breakfast: [
     {
       name: "Simple Two Eggs",
       description: "Poached, boiled, scrambled or fried with toast",
       price: "395",
-      image: "/simple-two-eggs.png",
+      image: "/simple tow eggs.webp",
     },
     {
       name: "Omelet",
-      description: "With onion, bell pepper, spinach, chili, cheese, mushroom and tomato",
+      description:
+        "With onion, bell pepper, spinach, chili, cheese, mushroom and tomato",
       price: "395",
-      image: "/omelet.png",
+      image: "/omelete.webp",
     },
     {
       name: "Three Pancakes",
       description: "With maple syrup and seasonal fruit",
       price: "355",
-      image: "/three-pancakes.png",
+      image: "/three pancakes.webp",
     },
     {
       name: "French Toast",
       description: "With maple syrup and seasonal fruit",
       price: "355",
-      image: "/french-toast.png",
+      image: "/french toast.webp",
     },
     {
       name: "Three Toast Bread",
@@ -211,72 +217,81 @@ const menuData: Record<string, MenuItem[]> = {
       name: "Oatmeal",
       description: "With honey cinnamon and strawberry",
       price: "325",
-      image: "/oatmeal.png",
+      image: "/oat meal with strawberries.webp",
     },
     {
       name: "Buffet Breakfast",
-      description: "Extensive breakfast selection including local dishes, fresh pastries, healthy cereals, eggs & waffle station & much more with your choice of fresh juices, coffee or tea",
+      description:
+        "Extensive breakfast selection including local dishes, fresh pastries, healthy cereals, eggs & waffle station & much more with your choice of fresh juices, coffee or tea",
       price: "999",
       image: "/buffet-breakfast.png",
     },
     {
       name: "American Breakfast",
-      description: "Omelet, fried, boiled, scrambled or poached with onion, chili, cheese mushroom, ham and tomato toast bread & homemade bakery with jam and butter sliced seasonal fruit & fresh juice coffee or tea",
+      description:
+        "Omelet, fried, boiled, scrambled or poached with onion, chili, cheese mushroom, ham and tomato toast bread & homemade bakery with jam and butter sliced seasonal fruit & fresh juice coffee or tea",
       price: "715",
       image: "/american-breakfast.png",
     },
     {
       name: "Continental Breakfast",
-      description: "Toast bread and homemade bakery with jam and butter, slice seasonal fruit, fresh juices, coffee and tea",
+      description:
+        "Toast bread and homemade bakery with jam and butter, slice seasonal fruit, fresh juices, coffee and tea",
       price: "625",
       image: "/continental-breakfast.png",
     },
     {
       name: "Chechebsa",
-      description: "Fresh dough homemade bread scrambles and mixed with berbere butter sauce or honey",
+      description:
+        "Fresh dough homemade bread scrambles and mixed with berbere butter sauce or honey",
       price: "425.35",
       image: "/chechebsa.png",
     },
   ],
-  "pizza": [
+  pizza: [
     {
       name: "Pizza Margherita",
       description: "Mozzarella cheese, tomato sauce oregano, garlic, oil",
       price: "575.25",
-      image: "/pizza-margherita.png",
+      image: "/pizza margherita.webp",
     },
     {
       name: "Pizza Al Bero",
-      description: "Mozzarella cheese, tomato sauce, tuna fish, onions, chili, garlic oil, basil",
+      description:
+        "Mozzarella cheese, tomato sauce, tuna fish, onions, chili, garlic oil, basil",
       price: "575.75",
       image: "/pizza-al-bero.png",
     },
     {
       name: "Pizza Own",
-      description: "Mozzarella cheese, tomato sauce, olive oil, oregano garlic and your choice of topping",
+      description:
+        "Mozzarella cheese, tomato sauce, olive oil, oregano garlic and your choice of topping",
       price: "725",
-      image: "/pizza-own.png",
+      image: "/pizza own.webp",
     },
     {
       name: "Pizza Calzone",
-      description: "Mozzarella cheese, tomato sauce, ham, beef sausage, basil, garlic olive",
+      description:
+        "Mozzarella cheese, tomato sauce, ham, beef sausage, basil, garlic olive",
       price: "655",
-      image: "/pizza-calzone.png",
+      image: "/pizza calzone.webp",
     },
     {
       name: "Beef Pizza",
-      description: "Mozzarella cheese, tomato sauce, minced beef, garlic olive, oregano",
+      description:
+        "Mozzarella cheese, tomato sauce, minced beef, garlic olive, oregano",
       price: "775",
-      image: "/beef-pizza.png",
+      image: "/beef pizza.webp",
     },
     {
       name: "Home Special Pizza",
-      description: "Mozzarella and Provolone cheese, tomato sauce, minced beef, chicken, chili, garlic oil, basil, vegetable",
+      description:
+        "Mozzarella and Provolone cheese, tomato sauce, minced beef, chicken, chili, garlic oil, basil, vegetable",
       price: "955",
-      image: "/home-special-pizza.png",
+      image: "/home special pizza.webp",
     },
   ],
-  "salads": [
+  salads: [
     {
       name: "Healthy Salad",
       description: "Grilled carrot, baby marrow, eggplant, lettuce",
@@ -285,23 +300,25 @@ const menuData: Record<string, MenuItem[]> = {
     },
     {
       name: "Chicken Caesar Salad",
-      description: "Lettuce, grilled/roasted chicken, parmesan cheese, croutons, lemon juice, served with Caesar and salad dressing",
+      description:
+        "Lettuce, grilled/roasted chicken, parmesan cheese, croutons, lemon juice, served with Caesar and salad dressing",
       price: "425",
-      image: "/chicken-caesar-salad.png",
+      image: "/chicken caesar salad.webp",
     },
     {
       name: "Mixed Vegetable Salad",
-      description: "Carrots, lettuce, onions, tomatoes and seasonal fruits and vegetables served",
+      description:
+        "Carrots, lettuce, onions, tomatoes and seasonal fruits and vegetables served",
       price: "410",
-      image: "/mixed-vegetable-salad.png",
+      image: "/mixed vegetable salad.webp",
     },
   ],
-  "snacks": [
+  snacks: [
     {
       name: "French Fries",
       description: "Crispy golden French fries",
       price: "390",
-      image: "/french-fries.png",
+      image: "/french fries.webp",
     },
     {
       name: "Vegetable Samosa",
@@ -322,7 +339,7 @@ const menuData: Record<string, MenuItem[]> = {
       image: "/special-assorted-canapés.png",
     },
   ],
-  "drinks": [
+  drinks: [
     {
       name: "Sparkling Water Small/Medium",
       description: "Refreshing sparkling water",
@@ -476,7 +493,7 @@ const menuData: Record<string, MenuItem[]> = {
       image: "/fresh-ginger-tea.png",
     },
   ],
-  "wine": [
+  wine: [
     {
       name: "Alvinde Reserva Syrah (75cl)",
       description: "Premium imported red wine",
@@ -580,7 +597,7 @@ const menuData: Record<string, MenuItem[]> = {
       image: "/glass-of-wine.png",
     },
   ],
-  "alcohols": [
+  alcohols: [
     {
       name: "Camus V.S.O.P (100cl)",
       description: "Premium cognac",
@@ -840,7 +857,7 @@ const menuData: Record<string, MenuItem[]> = {
       image: "/jaegermeister-100cl.png",
     },
   ],
-  "cocktails": [
+  cocktails: [
     {
       name: "Vodka Sour",
       description: "Vodka, lemon juice, simple syrup",
@@ -867,7 +884,8 @@ const menuData: Record<string, MenuItem[]> = {
     },
     {
       name: "Gin Fizz",
-      description: "50ml gin, 25ml lemon juice, 2 tsp sugar syrup, ice, sparkling water, lemon slice",
+      description:
+        "50ml gin, 25ml lemon juice, 2 tsp sugar syrup, ice, sparkling water, lemon slice",
       price: "655",
       image: "/gin-fizz.png",
     },
@@ -879,13 +897,15 @@ const menuData: Record<string, MenuItem[]> = {
     },
     {
       name: "Tequila Sunrise",
-      description: "1 ½ oz (3 parts) tequila, ½ oz (1 part) grenadine syrup, 3 oz (6 parts) orange juices",
+      description:
+        "1 ½ oz (3 parts) tequila, ½ oz (1 part) grenadine syrup, 3 oz (6 parts) orange juices",
       price: "545",
       image: "/tequila-sunrise.png",
     },
     {
       name: "Blue Monday",
-      description: "1.5 oz vodka, ½ ounces Cointreau, or triple sec, ½ ounce Blue curacao",
+      description:
+        "1.5 oz vodka, ½ ounces Cointreau, or triple sec, ½ ounce Blue curacao",
       price: "825",
       image: "/blue-monday.png",
     },
@@ -897,7 +917,8 @@ const menuData: Record<string, MenuItem[]> = {
     },
     {
       name: "Chocolate Martini",
-      description: "4 oz bailey's Irish cream, 4 oz chocolate liqueur, 8 oz vodka, 3 tsp chocolate syrup or ganache",
+      description:
+        "4 oz bailey's Irish cream, 4 oz chocolate liqueur, 8 oz vodka, 3 tsp chocolate syrup or ganache",
       price: "905",
       image: "/chocolate-martini.png",
     },
@@ -909,13 +930,15 @@ const menuData: Record<string, MenuItem[]> = {
     },
     {
       name: "Kamikaze",
-      description: "1 ½ ounces vodka, ½ ounce triple sec, Dash of lime juice: Lime",
+      description:
+        "1 ½ ounces vodka, ½ ounce triple sec, Dash of lime juice: Lime",
       price: "615",
       image: "/kamikaze.png",
     },
     {
       name: "Virgin Mojito",
-      description: "Tonic water, sprite, soda water, lemon juice, sugar, mint leaves",
+      description:
+        "Tonic water, sprite, soda water, lemon juice, sugar, mint leaves",
       price: "350",
       image: "/virgin-mojito.png",
     },
@@ -926,7 +949,7 @@ const menuData: Record<string, MenuItem[]> = {
       image: "/virgin-sour.png",
     },
   ],
-}
+};
 
 const categories = [
   { id: "main-dishes", name: "Main Dishes", icon: "🍽️" },
@@ -939,32 +962,35 @@ const categories = [
   { id: "wine", name: "Wine", icon: "🍷" },
   { id: "alcohols", name: "Alcohols", icon: "🥃" },
   { id: "cocktails", name: "Cocktails", icon: "🍸" },
-]
+];
 
 export function OakMenuSection({ activeTab }: { activeTab: string }) {
-  const items = menuData[activeTab] || []
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const itemsPerPage = 2 // Show 2 items at a time on desktop
+  const items = menuData[activeTab] || [];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 36; // Show 2 items at a time on desktop
 
-  const totalPages = Math.ceil(items.length / itemsPerPage)
-  const currentItems = items.slice(currentIndex * itemsPerPage, (currentIndex + 1) * itemsPerPage)
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+  const currentItems = items.slice(
+    currentIndex * itemsPerPage,
+    (currentIndex + 1) * itemsPerPage,
+  );
 
   const handleNext = () => {
     if (currentIndex < totalPages - 1) {
-      setCurrentIndex(currentIndex + 1)
+      setCurrentIndex(currentIndex + 1);
     }
-  }
+  };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1)
+      setCurrentIndex(currentIndex - 1);
     }
-  }
+  };
 
   const handleOrder = (itemName: string) => {
-    console.log("[v0] Order placed for:", itemName)
+    console.log("[v0] Order placed for:", itemName);
     // Add order logic here
-  }
+  };
 
   return (
     <div className="relative">
@@ -1035,18 +1061,22 @@ export function OakMenuSection({ activeTab }: { activeTab: string }) {
                     <h3 className="font-serif text-2xl font-bold text-white uppercase tracking-wide leading-tight">
                       {item.name}
                     </h3>
-                    <p className="text-amber-100 text-base leading-relaxed font-sans">{item.description}</p>
+                    <p className="text-amber-100 text-base leading-relaxed font-sans">
+                      {item.description}
+                    </p>
                   </div>
 
                   <div className="flex items-center justify-between mt-4 pt-4 border-t border-amber-500/30">
-                    <span className="font-serif text-2xl font-bold text-amber-500">{item.price} ETB</span>
-                    <Button
+                    <span className="font-serif text-2xl font-bold text-amber-500">
+                      {item.price} ETB
+                    </span>
+                    {/*<Button
                       onClick={() => handleOrder(item.name)}
                       className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-sans uppercase tracking-wider text-sm px-6 py-2.5 h-auto shadow-md hover:shadow-lg transition-all duration-300"
                     >
                       <ShoppingCart className="w-4 h-4 mr-2" />
                       Order
-                    </Button>
+                    </Button>*/}
                   </div>
                 </div>
               </div>
@@ -1061,14 +1091,16 @@ export function OakMenuSection({ activeTab }: { activeTab: string }) {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? "bg-amber-500 w-8" : "bg-amber-500/50 hover:bg-amber-500/70"
-                  }`}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "bg-amber-500 w-8"
+                  : "bg-amber-500/50 hover:bg-amber-500/70"
+              }`}
               aria-label={`Go to page ${index + 1}`}
             />
           ))}
         </div>
       )}
     </div>
-  )
+  );
 }

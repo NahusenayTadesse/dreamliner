@@ -1,27 +1,35 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Phone, MapPin, Instagram, Facebook, Mail, Clock, Home } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { LoadingScreen } from "@/components/loading-screen"
-import { RoomMenuSection } from "@/components/room-menu-section"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import {
+  Phone,
+  MapPin,
+  Instagram,
+  Facebook,
+  Mail,
+  Clock,
+  Home,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { LoadingScreen } from "@/components/loading-screen";
+import { MenuSection as RoomMenuSection } from "@/components/zaika-roommenu";
 
 export default function ZaikaRoomPage() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [activeTab, setActiveTab] = useState("thali")
+  const [isLoading, setIsLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("thali");
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000)
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const scrollToMenu = () => {
-    document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })
-  }
+    document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   if (isLoading) {
-    return <LoadingScreen />
+    return <LoadingScreen />;
   }
 
   return (
@@ -100,7 +108,7 @@ export default function ZaikaRoomPage() {
               View Room Service Menu
             </Button>
             <Button
-              onClick={() => window.open('tel:+1234567890')}
+              onClick={() => window.open("tel:+1234567890")}
               size="lg"
               variant="outline"
               className="border-2 border-border hover:border-primary hover:bg-primary hover:text-primary-foreground px-10 py-6 text-sm font-medium uppercase tracking-wider transition-all duration-300 font-sans"
@@ -126,8 +134,12 @@ export default function ZaikaRoomPage() {
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
               <div className="h-px w-12 bg-border" />
             </div>
-            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-4 text-foreground">MENU</h2>
-            <p className="text-foreground/70 text-sm uppercase tracking-[0.3em] font-sans">Our Selection</p>
+            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-4 text-foreground">
+              MENU
+            </h2>
+            <p className="text-foreground/70 text-sm uppercase tracking-[0.3em] font-sans">
+              Our Selection
+            </p>
           </motion.div>
 
           {/* Menu category buttons */}
@@ -138,22 +150,30 @@ export default function ZaikaRoomPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-wrap justify-center gap-2 mb-12 border-y border-border/40 py-6"
           >
-            {["thali", "starters", "main", "fish", "vegetarian", "biryani", "breads", "desserts", "drinks"].map(
-              (tab) => (
-                <Button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  variant="ghost"
-                  className={`capitalize px-4 py-2 text-xs uppercase tracking-wider transition-all duration-300 font-sans ${
-                    activeTab === tab
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground/60 hover:text-foreground hover:bg-accent/50"
-                  }`}
-                >
-                  {tab === "main" ? "Main Course" : tab}
-                </Button>
-              ),
-            )}
+            {[
+              "thali",
+              "starters",
+              "main",
+              "fish",
+              "vegetarian",
+              "biryani",
+              "breads",
+              "desserts",
+              "drinks",
+            ].map((tab) => (
+              <Button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                variant="ghost"
+                className={`capitalize px-4 py-2 text-xs uppercase tracking-wider transition-all duration-300 font-sans ${
+                  activeTab === tab
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground/60 hover:text-foreground hover:bg-accent/50"
+                }`}
+              >
+                {tab === "main" ? "Main Course" : tab}
+              </Button>
+            ))}
           </motion.div>
 
           {/* Menu Items */}
@@ -174,15 +194,19 @@ export default function ZaikaRoomPage() {
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
               <div className="h-px w-12 bg-border" />
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-foreground">OUR STORY</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-foreground">
+              OUR STORY
+            </h2>
             <p className="text-foreground/80 text-base leading-relaxed mb-6 font-sans">
-              At Zaika, we honor centuries-old culinary traditions. Our chefs craft each dish with hand-selected spices
-              and premium ingredients, creating an authentic experience that celebrates India's rich gastronomic
-              heritage.
+              At Zaika, we honor centuries-old culinary traditions. Our chefs
+              craft each dish with hand-selected spices and premium ingredients,
+              creating an authentic experience that celebrates India's rich
+              gastronomic heritage.
             </p>
             <p className="text-foreground/80 text-base leading-relaxed font-sans">
-              From our kitchen to your room, we deliver the same exceptional quality and flavors that have made us a
-              beloved destination for authentic Indian cuisine.
+              From our kitchen to your room, we deliver the same exceptional
+              quality and flavors that have made us a beloved destination for
+              authentic Indian cuisine.
             </p>
           </motion.div>
         </div>
@@ -202,7 +226,9 @@ export default function ZaikaRoomPage() {
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
               <div className="h-px w-12 bg-border" />
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-foreground">CONTACT US</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-foreground">
+              CONTACT US
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="space-y-4">
                 <div className="flex items-center justify-center gap-3">
@@ -229,7 +255,9 @@ export default function ZaikaRoomPage() {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => window.open('https://instagram.com/zaika', '_blank')}
+                onClick={() =>
+                  window.open("https://instagram.com/zaika", "_blank")
+                }
                 className="border-2 border-border/40 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Instagram className="w-4 h-4 mr-2" />
@@ -238,7 +266,9 @@ export default function ZaikaRoomPage() {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => window.open('https://facebook.com/zaika', '_blank')}
+                onClick={() =>
+                  window.open("https://facebook.com/zaika", "_blank")
+                }
                 className="border-2 border-border/40 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Facebook className="w-4 h-4 mr-2" />
@@ -249,5 +279,5 @@ export default function ZaikaRoomPage() {
         </div>
       </section>
     </main>
-  )
+  );
 }
