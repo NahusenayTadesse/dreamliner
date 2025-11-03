@@ -1,10 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { usePathname } from "next/navigation";
+
+import { motion } from "framer-motion";
 
 export function LoadingScreen() {
   return (
-    <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
+    <div
+      className={`fixed inset-0 ${usePathname().startsWith("/oak") ? "bg-slate-900" : "bg-background"} flex items-center justify-center z-50`}
+    >
       <div className="absolute inset-8 border-2 border-border/40 pointer-events-none" />
       <div className="absolute inset-12 border border-border/20 pointer-events-none" />
 
@@ -29,10 +33,16 @@ export function LoadingScreen() {
           transition={{ duration: 0.6 }}
           className="mb-6"
         >
-          <h2 className="font-serif text-7xl font-bold text-foreground uppercase tracking-wider">ZAIKA</h2>
+          <h2 className="font-serif text-7xl font-bold text-foreground uppercase tracking-wider">
+            {usePathname().startsWith("/oak") ? "oak" : "zaika"}
+          </h2>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
           <div className="flex gap-2 justify-center">
             {[0, 1, 2].map((i) => (
               <motion.div
@@ -52,5 +62,5 @@ export function LoadingScreen() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
