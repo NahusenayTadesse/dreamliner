@@ -1,31 +1,37 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Phone, MapPin, Instagram, Facebook, Mail, Clock } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { LoadingScreen } from "@/components/loading-screen"
-import { OakMenuSection } from "@/components/oak-menu-section"
+import { useState, useEffect } from "react";
+import Head from "next/head";
+
+import { motion } from "framer-motion";
+import { Phone, MapPin, Instagram, Facebook, Mail, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { LoadingScreen } from "@/components/loading-screen";
+import { OakMenuSection, categories } from "@/components/oakRoom";
 
 export default function OakRestaurantPage() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [activeTab, setActiveTab] = useState("main-dishes")
+  const [isLoading, setIsLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("main-dishes");
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000)
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const scrollToMenu = () => {
-    document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })
-  }
+    document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   if (isLoading) {
-    return <LoadingScreen />
+    return <LoadingScreen />;
   }
 
   return (
     <main className="min-h-screen bg-slate-900">
+      <Head>
+        <title>Oak Restaurant</title>
+        <meta name="description" content="Oak Restaurant Menu" />
+      </Head>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
         {/* Decorative border frame */}
         <div className="absolute inset-8 border-2 border-amber-500/40 pointer-events-none" />
@@ -81,7 +87,9 @@ export default function OakRestaurantPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-base md:text-lg text-amber-100 mb-12 font-light max-w-xl mx-auto leading-relaxed font-sans italic"
+            className="text-base wrap-break-words text-balance whitespace-normal
+ md:text-lg  mb-12 font-light w-[90%]
+ mx-auto px-2 leading-relaxed font-sans italic text-amber-100"
           >
             Culinary excellence at Dreamliner Hotel
           </motion.p>
@@ -139,8 +147,12 @@ export default function OakRestaurantPage() {
               <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               <div className="h-px w-12 bg-amber-500/60" />
             </div>
-            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-4 text-white">MENU</h2>
-            <p className="text-amber-100 text-sm uppercase tracking-[0.3em] font-sans">Our Selection</p>
+            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-4 text-white">
+              MENU
+            </h2>
+            <p className="text-amber-100 text-sm uppercase tracking-[0.3em] font-sans">
+              Our Selection
+            </p>
           </motion.div>
 
           {/* Menu category buttons */}
@@ -149,20 +161,9 @@ export default function OakRestaurantPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-2 mb-12 border-y border-amber-500/40 py-6"
+            className="flex flex-wrap sticky top-0 bg-slate-800/10 backdrop-blur-md z-50 justify-center gap-2 mb-12 border-y border-amber-500/40 py-6"
           >
-            {[
-              { id: "main-dishes", name: "Main Dishes" },
-              { id: "breakfast", name: "Breakfast" },
-              { id: "pizza", name: "Pizza" },
-              { id: "salads", name: "Salads" },
-              { id: "snacks", name: "Snacks" },
-              { id: "drinks", name: "Drinks" },
-              { id: "hot-drinks", name: "Hot Drinks" },
-              { id: "wine", name: "Wine" },
-              { id: "alcohols", name: "Alcohols" },
-              { id: "cocktails", name: "Cocktails" },
-            ].map((category) => (
+            {categories.map((category) => (
               <Button
                 key={category.id}
                 onClick={() => setActiveTab(category.id)}
@@ -180,6 +181,9 @@ export default function OakRestaurantPage() {
 
           {/* Menu Items */}
           <OakMenuSection activeTab={activeTab} />
+          <p className="text-amber-100/60 text-sm text-center my-4 uppercase tracking-wider font-sans">
+            ALL PRICES ARE IN ETB & EXCLUSIVE OF 10% SERVICE CHARGE AND 15% VAT
+          </p>
         </div>
       </section>
 
@@ -196,14 +200,19 @@ export default function OakRestaurantPage() {
               <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               <div className="h-px w-12 bg-amber-500/60" />
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-white">OUR STORY</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-white">
+              OUR STORY
+            </h2>
             <p className="text-amber-100 text-base leading-relaxed mb-6 font-sans">
-              At Oak Restaurant, we celebrate the art of fine dining with a commitment to culinary excellence. 
-              Our chefs craft each dish with precision, using the finest ingredients to create memorable dining experiences.
+              At Oak Restaurant, we celebrate the art of fine dining with a
+              commitment to culinary excellence. Our chefs craft each dish with
+              precision, using the finest ingredients to create memorable dining
+              experiences.
             </p>
             <p className="text-amber-100 text-base leading-relaxed font-sans">
-              Located at Dreamliner Hotel, we offer an extensive menu featuring international cuisine, premium beverages, 
-              and exceptional service in an elegant atmosphere.
+              Located at Dreamliner Hotel, we offer an extensive menu featuring
+              international cuisine, premium beverages, and exceptional service
+              in an elegant atmosphere.
             </p>
           </motion.div>
         </div>
@@ -223,26 +232,34 @@ export default function OakRestaurantPage() {
               <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               <div className="h-px w-12 bg-amber-500/60" />
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-white">CONTACT US</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-white">
+              CONTACT US
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="space-y-4">
                 <div className="flex items-center justify-center gap-3">
                   <Phone className="w-5 h-5 text-amber-500" />
-                  <span className="text-lg text-amber-100">+251 900 000 000</span>
+                  <span className="text-lg text-amber-100">
+                    <a href="tel:+251 985 767 380">+251 985 767 380</a>
+                  </span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   <Clock className="w-5 h-5 text-amber-500" />
-                  <span className="text-lg text-amber-100">Daily 11:00 AM - 11:00 PM</span>
+                  <span className="text-lg text-amber-100">24/7</span>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center justify-center gap-3">
                   <Mail className="w-5 h-5 text-amber-500" />
-                  <span className="text-lg text-amber-100">oak@dreamlinerhotel.com</span>
+                  <span className="text-lg text-amber-100">
+                    reservation@dreamlinerhotel.com
+                  </span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   <MapPin className="w-5 h-5 text-amber-500" />
-                  <span className="text-lg text-amber-100">Dreamliner Hotel, Addis Ababa</span>
+                  <span className="text-lg text-amber-100">
+                    Dreamliner Hotel, Addis Ababa
+                  </span>
                 </div>
               </div>
             </div>
@@ -250,7 +267,9 @@ export default function OakRestaurantPage() {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => window.open('https://instagram.com/oakrestaurant', '_blank')}
+                onClick={() =>
+                  window.open("https://instagram.com/oakrestaurant", "_blank")
+                }
                 className="border-2 border-amber-500/60 text-amber-100 hover:border-amber-500 hover:bg-amber-500 hover:text-slate-900 transition-all duration-300"
               >
                 <Instagram className="w-4 h-4 mr-2" />
@@ -259,7 +278,9 @@ export default function OakRestaurantPage() {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => window.open('https://facebook.com/oakrestaurant', '_blank')}
+                onClick={() =>
+                  window.open("https://facebook.com/oakrestaurant", "_blank")
+                }
                 className="border-2 border-amber-500/60 text-amber-100 hover:border-amber-500 hover:bg-amber-500 hover:text-slate-900 transition-all duration-300"
               >
                 <Facebook className="w-4 h-4 mr-2" />
@@ -268,12 +289,13 @@ export default function OakRestaurantPage() {
             </div>
             <div className="mt-8">
               <p className="text-amber-100/60 text-sm uppercase tracking-wider font-sans">
-                ALL PRICES ARE IN ETB & EXCLUSIVE OF 10% SERVICE CHARGE AND 15% VAT
+                ALL PRICES ARE IN ETB & EXCLUSIVE OF 10% SERVICE CHARGE AND 15%
+                VAT
               </p>
             </div>
           </motion.div>
         </div>
       </section>
     </main>
-  )
+  );
 }

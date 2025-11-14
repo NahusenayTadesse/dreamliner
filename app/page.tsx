@@ -1,37 +1,39 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Phone, MapPin, Instagram, Facebook, Mail, Clock } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { LoadingScreen } from "@/components/loading-screen"
-import { MenuSection } from "@/components/menu-section"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Phone, MapPin, Instagram, Facebook, Mail, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { LoadingScreen } from "@/components/loading-screen";
+import { MenuSection } from "@/components/menu-section";
+
+let year = new Date().getFullYear();
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [activeTab, setActiveTab] = useState("thali")
+  const [isLoading, setIsLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("thali");
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000)
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const scrollToMenu = () => {
-    document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })
-  }
+    document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   if (isLoading) {
-    return <LoadingScreen />
+    return <LoadingScreen />;
   }
 
   return (
     <main className="min-h-screen">
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      <section className="relative min-h-screen flex items-center justify-center bg-background">
         {/* Decorative border frame */}
         <div className="absolute inset-8 border-2 border-border/40 pointer-events-none" />
         <div className="absolute inset-12 border border-border/20 pointer-events-none" />
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 mx-auto">
           {/* Ornamental top decoration */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -81,7 +83,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-base md:text-lg text-foreground/80 mb-12 font-light max-w-xl mx-auto leading-relaxed font-sans italic"
+            className="text-base wrap-break-words text-balance whitespace-normal
+ md:text-lg text-foreground/80 mb-12 font-light max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl
+ mx-auto leading-relaxed font-sans italic"
           >
             Traditional recipes passed down through generations
           </motion.p>
@@ -139,8 +143,12 @@ export default function Home() {
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
               <div className="h-px w-12 bg-border" />
             </div>
-            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-4 text-foreground">MENU</h2>
-            <p className="text-foreground/70 text-sm uppercase tracking-[0.3em] font-sans">Our Selection</p>
+            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-4 text-foreground">
+              MENU
+            </h2>
+            <p className="text-foreground/70 text-sm uppercase tracking-[0.3em] font-sans">
+              Our Selection
+            </p>
           </motion.div>
 
           {/* Menu category buttons */}
@@ -149,28 +157,47 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-2 mb-12 border-y border-border/40 py-6"
+            className="flex flex-wrap justify-center sticky top-0 z-50 bg-background/10 backdrop-blur-md gap-2 mb-12 border-y border-border/40 py-6"
           >
-            {["thali", "starters", "main", "fish", "vegetarian", "biryani", "breads", "desserts", "drinks"].map(
-              (tab) => (
-                <Button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  variant="ghost"
-                  className={`capitalize px-4 py-2 text-xs uppercase tracking-wider transition-all duration-300 font-sans ${
-                    activeTab === tab
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground/60 hover:text-foreground hover:bg-accent/50"
-                  }`}
-                >
-                  {tab === "main" ? "Main Course" : tab}
-                </Button>
-              ),
-            )}
+            {[
+              "thali",
+              "starters",
+              "main courses",
+
+              "vegetarian",
+              "biryanis",
+              "breads",
+              "desserts",
+              "cocktails and mocktails",
+              "signature cocktails",
+
+              "beers and cider",
+              "spirits",
+              "non alcholic drinks",
+
+              "Hot Drinks",
+              "kids menu",
+            ].map((tab) => (
+              <Button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                variant="ghost"
+                className={`px-4 py-2 text-xs uppercase tracking-wider transition-all duration-300 font-sans ${
+                  activeTab === tab
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground/60 hover:text-foreground hover:bg-accent/50"
+                }`}
+              >
+                {tab === "main" ? "Main Course" : tab}
+              </Button>
+            ))}
           </motion.div>
 
           {/* Menu Items */}
           <MenuSection activeTab={activeTab} />
+          <p className="text-lg text-center my-8 text-foreground/50 font-sans italic">
+            Prices not inclusive of 10% service charge and 15% VAT
+          </p>
         </div>
       </section>
 
@@ -187,11 +214,14 @@ export default function Home() {
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
               <div className="h-px w-12 bg-border" />
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-foreground">OUR STORY</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-foreground">
+              OUR STORY
+            </h2>
             <p className="text-foreground/80 text-base leading-relaxed mb-6 font-sans">
-              At Zaika, we honor centuries-old culinary traditions. Our chefs craft each dish with hand-selected spices
-              and premium ingredients, creating an authentic experience that celebrates India's rich gastronomic
-              heritage.
+              At Zaika, we honor centuries-old culinary traditions. Our chefs
+              craft each dish with hand-selected spices and premium ingredients,
+              creating an authentic experience that celebrates India's rich
+              gastronomic heritage.
             </p>
             <p className="text-foreground/70 text-sm italic font-sans">
               From the vibrant streets of Delhi to the royal courts of Rajasthan
@@ -214,10 +244,12 @@ export default function Home() {
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
               <div className="h-px w-12 bg-border" />
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-foreground">VISIT US</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              VISIT US
+            </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12 border-y border-border/40 py-12">
+          <div className="grid md:grid-cols-4 gap-8 mb-12 border-y border-border/40 py-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -226,12 +258,33 @@ export default function Home() {
               className="text-center"
             >
               <Phone className="w-6 h-6 mx-auto mb-3 text-primary" />
-              <h3 className="font-serif font-semibold mb-2 text-foreground text-sm uppercase tracking-wider">Phone</h3>
+              <h3 className="font-serif font-semibold mb-2 text-foreground text-sm uppercase tracking-wider">
+                Phone
+              </h3>
               <a
-                href="tel:+251900000000"
+                href="tel:0985 767 380"
                 className="text-foreground/70 hover:text-primary transition-colors text-sm font-sans"
               >
-                +251 900 000 000
+                +251 985 767 380
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-center"
+            >
+              <Mail className="w-6 h-6 mx-auto mb-3 text-primary" />
+              <h3 className="font-serif font-semibold mb-2 text-foreground text-sm uppercase tracking-wider">
+                Email
+              </h3>
+              <a
+                className="text-foreground/70 text-sm font-sans"
+                href="mailto:reservation@dreamlinerhotel.com"
+              >
+                reservation@dreamlinerhotel.com
               </a>
             </motion.div>
 
@@ -246,7 +299,9 @@ export default function Home() {
               <h3 className="font-serif font-semibold mb-2 text-foreground text-sm uppercase tracking-wider">
                 Location
               </h3>
-              <p className="text-foreground/70 text-sm font-sans">Addis Ababa, Ethiopia</p>
+              <p className="text-foreground/70 text-sm font-sans">
+                Addis Ababa, Ethiopia
+              </p>
             </motion.div>
 
             <motion.div
@@ -257,9 +312,15 @@ export default function Home() {
               className="text-center"
             >
               <Clock className="w-6 h-6 mx-auto mb-3 text-primary" />
-              <h3 className="font-serif font-semibold mb-2 text-foreground text-sm uppercase tracking-wider">Hours</h3>
-              <p className="text-foreground/70 text-xs font-sans">Lunch: 12:00 - 15:00</p>
-              <p className="text-foreground/70 text-xs font-sans">Dinner: 18:00 - 00:00</p>
+              <h3 className="font-serif font-semibold mb-2 text-foreground text-sm uppercase tracking-wider">
+                Hours
+              </h3>
+              <p className="text-foreground/70 text-xs font-sans">
+                Lunch: 12:00 PM - 03:00 PM
+              </p>
+              <p className="text-foreground/70 text-xs font-sans">
+                Dinner: 06:00 PM - 11:00 PM
+              </p>
             </motion.div>
           </div>
 
@@ -284,12 +345,22 @@ export default function Home() {
             >
               <Facebook className="w-4 h-4" />
             </Button>
+
             <Button
               size="icon"
               variant="ghost"
               className="w-10 h-10 hover:bg-primary hover:text-primary-foreground transition-all"
             >
-              <Mail className="w-4 h-4" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="w-10 h-10 hover:bg-primary hover:text-primary-foreground transition-all"
+                viewBox="0 0 16 16"
+              >
+                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4 1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z" />
+              </svg>
             </Button>
           </motion.div>
         </div>
@@ -302,12 +373,11 @@ export default function Home() {
             <div className="w-1 h-1 rounded-full bg-border" />
             <div className="h-px w-8 bg-border" />
           </div>
-          <p className="text-xs text-foreground/60 mb-2 font-sans uppercase tracking-wider">© 2025 Zaika</p>
-          <p className="text-xs text-foreground/50 font-sans italic">
-            Prices not inclusive of 10% service charge and 15% VAT
+          <p className="text-xs text-foreground/60 mb-2 font-sans uppercase tracking-wider">
+            © {year} Zaika
           </p>
         </div>
       </footer>
     </main>
-  )
+  );
 }

@@ -89,9 +89,11 @@ export default function ZaikaRoomPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-base md:text-lg text-foreground/80 mb-12 font-light max-w-xl mx-auto leading-relaxed font-sans italic"
+            className="text-base wrap-break-words text-balance whitespace-normal
+ md:text-lg text-foreground/80 mb-12 font-light max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl
+ mx-auto leading-relaxed font-sans italic"
           >
-            Traditional recipes delivered to your room with premium service
+            Traditional recipes passed down through generations
           </motion.p>
 
           <motion.div
@@ -148,24 +150,34 @@ export default function ZaikaRoomPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-2 mb-12 border-y border-border/40 py-6"
+            className="flex flex-wrap justify-center sticky top-0 z-50 bg-background/10 backdrop-blur-md gap-2 mb-12 border-y border-border/40 py-6"
           >
             {[
               "thali",
               "starters",
-              "main",
-              "fish",
+              "main courses",
+
               "vegetarian",
-              "biryani",
+              "biryanis",
               "breads",
               "desserts",
-              "drinks",
+              "cocktails",
+              "signature cocktails",
+
+              "mocktails",
+
+              "beers and cider",
+              "spirits",
+              "non alcholic drinks",
+
+              "Hot Drinks",
+              "kids menu",
             ].map((tab) => (
               <Button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 variant="ghost"
-                className={`capitalize px-4 py-2 text-xs uppercase tracking-wider transition-all duration-300 font-sans ${
+                className={`px-4 py-2 text-xs uppercase tracking-wider transition-all duration-300 font-sans ${
                   activeTab === tab
                     ? "bg-primary text-primary-foreground"
                     : "text-foreground/60 hover:text-foreground hover:bg-accent/50"
@@ -233,17 +245,23 @@ export default function ZaikaRoomPage() {
               <div className="space-y-4">
                 <div className="flex items-center justify-center gap-3">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span className="text-lg">+251 900 000 000</span>
+                  <span className="text-lg">
+                    <a href="tel:+251 985 767 380">+251 985 767 380</a>{" "}
+                  </span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   <Clock className="w-5 h-5 text-primary" />
-                  <span className="text-lg">Daily 11:00 AM - 11:00 PM</span>
+                  <span className="text-lg">Hours 24/7</span>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center justify-center gap-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span className="text-lg">info@zaika.com</span>
+                  <span className="text-lg">
+                    <a href="mailto:reservation@dreamlandhotel.com">
+                      reservation@dreamlandhotel.com
+                    </a>
+                  </span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   <MapPin className="w-5 h-5 text-primary" />
@@ -271,8 +289,17 @@ export default function ZaikaRoomPage() {
                 }
                 className="border-2 border-border/40 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                <Facebook className="w-4 h-4 mr-2" />
-                Facebook
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="w-10 h-10 hover:bg-primary hover:text-primary-foreground transition-all"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4 1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z" />
+                </svg>
+                Tiktok
               </Button>
             </div>
           </motion.div>

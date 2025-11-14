@@ -1,39 +1,41 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, ShoppingCart } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, ShoppingCart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 interface MenuItem {
-  name: string
-  description?: string
-  price: string
-  image?: string
-  isSpecial?: boolean
-  isNew?: boolean
+  name: string;
+  description?: string;
+  price: string;
+  image?: string;
+  isSpecial?: boolean;
+  isNew?: boolean;
 }
 
 // Utility to apply 17% markup to flexible price strings
 function applyMarkupToPrice(price: string): string {
-  const trim = price.trim()
+  const trim = price.trim();
   // Handle ranges or multi-prices separated by '/'
   if (trim.includes("/")) {
     return trim
       .split("/")
       .map((p) => applyMarkupToPrice(p))
-      .join("/")
+      .join("/");
   }
   // Remove commas and non-number trailing text
-  const numeric = parseFloat(trim.replace(/[^0-9.]/g, ""))
+  const numeric = parseFloat(trim.replace(/[^0-9.]/g, ""));
   if (Number.isFinite(numeric)) {
-    const marked = Math.round(numeric * 1.17 * 100) / 100
+    const marked = Math.round(numeric * 1.17 * 100) / 100;
     // keep up to 2 decimals only if needed
-    const shown = Number.isInteger(marked) ? marked.toFixed(0) : marked.toFixed(2)
-    return shown
+    const shown = Number.isInteger(marked)
+      ? marked.toFixed(0)
+      : marked.toFixed(2);
+    return shown;
   }
-  return trim
+  return trim;
 }
 
 const originalMenuData: Record<string, MenuItem[]> = {
@@ -85,7 +87,8 @@ const originalMenuData: Record<string, MenuItem[]> = {
     },
     {
       name: "Chechebsa",
-      description: "Fresh homemade bread scrambled and mixed with berbere butter sauce or honey.",
+      description:
+        "Fresh homemade bread scrambled and mixed with berbere butter sauce or honey.",
       price: "375",
     },
     {
@@ -95,59 +98,220 @@ const originalMenuData: Record<string, MenuItem[]> = {
     },
   ],
   salads: [
-    { name: "Avocado egg salad", description: "Mixed seasonal lettuce, seasoned avocado, and boiled egg with mustard dressing.", price: "410" },
-    { name: "Habesha salad", description: "Ethiopian-style salad with tomato, romaine lettuce, onion, green chili, and lemon dressing.", price: "390" },
-    { name: "Tuna salad", description: "Tuna chunks, onion, boiled egg, boiled potato, carrot, and French dressing.", price: "390" },
-    { name: "Crispy chicken salad", description: "Lettuce, crispy chicken, red pepper, cucumber, and honey mustard dressing.", price: "450" },
-    { name: "Chicken Caesar salad", description: "Lettuce, grilled/roasted chicken, parmesan cheese, croutons, lemon juice, and Caesar dressing.", price: "400" },
+    {
+      name: "Avocado egg salad",
+      description:
+        "Mixed seasonal lettuce, seasoned avocado, and boiled egg with mustard dressing.",
+      price: "410",
+    },
+    {
+      name: "Habesha salad",
+      description:
+        "Ethiopian-style salad with tomato, romaine lettuce, onion, green chili, and lemon dressing.",
+      price: "390",
+    },
+    {
+      name: "Tuna salad",
+      description:
+        "Tuna chunks, onion, boiled egg, boiled potato, carrot, and French dressing.",
+      price: "390",
+    },
+    {
+      name: "Crispy chicken salad",
+      description:
+        "Lettuce, crispy chicken, red pepper, cucumber, and honey mustard dressing.",
+      price: "450",
+    },
+    {
+      name: "Chicken Caesar salad",
+      description:
+        "Lettuce, grilled/roasted chicken, parmesan cheese, croutons, lemon juice, and Caesar dressing.",
+      price: "400",
+    },
   ],
   soups: [
-    { name: "Beef soup", description: "Homemade soup specialty with tender red meat.", price: "410" },
-    { name: "Chicken soup", description: "Made with chicken, onion, celery, carrots, parsley, pepper, and lemon juice.", price: "425" },
-    { name: "Hot and sour soup", description: "Mushroom, rice, chili, garlic, ginger, pepper, and onion (immune-boosting).", price: "335" },
+    {
+      name: "Beef soup",
+      description: "Homemade soup specialty with tender red meat.",
+      price: "410",
+    },
+    {
+      name: "Chicken soup",
+      description:
+        "Made with chicken, onion, celery, carrots, parsley, pepper, and lemon juice.",
+      price: "425",
+    },
+    {
+      name: "Hot and sour soup",
+      description:
+        "Mushroom, rice, chili, garlic, ginger, pepper, and onion (immune-boosting).",
+      price: "335",
+    },
     { name: "Pumpkin soup", price: "315" },
     { name: "Vegetable soup", price: "325" },
     { name: "Tomato soup", price: "275" },
     { name: "Soup of the day", price: "437" },
   ],
   pasta: [
-    { name: "Baked pasta", description: "Dry pasta mixed with beef, cream, tomato, parmesan, vegetables, and provolone cheese, served gratinated.", price: "475" },
+    {
+      name: "Baked pasta",
+      description:
+        "Dry pasta mixed with beef, cream, tomato, parmesan, vegetables, and provolone cheese, served gratinated.",
+      price: "475",
+    },
     { name: "Spaghetti bolognese", price: "350" },
     { name: "Spaghetti vegetable", price: "350" },
   ],
   vegetarian: [
-    { name: "Eggplant parmigiana", description: "Grilled and marinated eggplant, breaded, fried, and gratinated with mozzarella and parmesan cheese. Served with French fries and sautéed zucchini.", price: "597" },
+    {
+      name: "Eggplant parmigiana",
+      description:
+        "Grilled and marinated eggplant, breaded, fried, and gratinated with mozzarella and parmesan cheese. Served with French fries and sautéed zucchini.",
+      price: "597",
+    },
   ],
   "lake-and-sea": [
-    { name: "Herb crush Nile perch", description: "Herb fillet of perch with caramelized citrus fruits, boiled vegetables, lemon, and garlic olive oil.", price: "799" },
-    { name: "Mixed grill", description: "Marinated Nile perch, shrimp, and salmon with fried potatoes and couscous, served with oyster soy garlic sauce.", price: "1250" },
+    {
+      name: "Herb crush Nile perch",
+      description:
+        "Herb fillet of perch with caramelized citrus fruits, boiled vegetables, lemon, and garlic olive oil.",
+      price: "799",
+    },
+    {
+      name: "Mixed grill",
+      description:
+        "Marinated Nile perch, shrimp, and salmon with fried potatoes and couscous, served with oyster soy garlic sauce.",
+      price: "1250",
+    },
   ],
   carnivore: [
-    { name: "Chicken mushroom", description: "Supreme chicken sautéed with mixed mushroom, cream, and tomato coulis. Served with browned potatoes and vegetables.", price: "752.57" },
-    { name: "Mediterranean chicken grill", description: "Grilled chicken breast marinated in rosemary and garlic, served with mashed potatoes, vegetables, and chicken gravy.", price: "725.57" },
-    { name: "Chicken curry", description: "Chicken cubes sautéed with curry sauce, served with steamed rice.", price: "725.75" },
-    { name: "Chicken fajita", description: "Chicken strips, onion, capsicum, and spices served with tortilla.", price: "705.75" },
-    { name: "Butter chicken", description: "Grilled juicy chicken in rich tomato sauce.", price: "715.50" },
-    { name: "Chicken Alfredo with tomato cream", description: "Creamy chicken spaghetti with tomato and fresh basil.", price: "705.75" },
-    { name: "Stuffed chicken breast", description: "Chicken with cheese, spinach, herbs, and sun-dried tomatoes.", price: "995.55" },
-    { name: "Beef fajita", description: "Beef strips, onion, capsicum, Indian spices, and tortilla.", price: "705.75" },
-    { name: "Sautéed beef fillet with eggplant crush", description: "Beef fillet cubes with gravy and special eggplant, served with fried potatoes.", price: "715.55" },
-    { name: "Grilled lamb loin skewer", description: "Lamb loin with rosemary and garlic, served with mushroom rice, grilled tomato, pepper, and red wine sauce.", price: "850" },
-    { name: "South African grilled chicken breast", description: "Grilled chicken breast in mushroom sauce.", price: "435.25" },
-    { name: "Yebeg tibs", description: "Lamb cubes mixed with vegetables and spices, served with injera.", price: "450" },
+    {
+      name: "Chicken mushroom",
+      description:
+        "Supreme chicken sautéed with mixed mushroom, cream, and tomato coulis. Served with browned potatoes and vegetables.",
+      price: "752.57",
+    },
+    {
+      name: "Mediterranean chicken grill",
+      description:
+        "Grilled chicken breast marinated in rosemary and garlic, served with mashed potatoes, vegetables, and chicken gravy.",
+      price: "725.57",
+    },
+    {
+      name: "Chicken curry",
+      description:
+        "Chicken cubes sautéed with curry sauce, served with steamed rice.",
+      price: "725.75",
+    },
+    {
+      name: "Chicken fajita",
+      description:
+        "Chicken strips, onion, capsicum, and spices served with tortilla.",
+      price: "705.75",
+    },
+    {
+      name: "Butter chicken",
+      description: "Grilled juicy chicken in rich tomato sauce.",
+      price: "715.50",
+    },
+    {
+      name: "Chicken Alfredo with tomato cream",
+      description: "Creamy chicken spaghetti with tomato and fresh basil.",
+      price: "705.75",
+    },
+    {
+      name: "Stuffed chicken breast",
+      description:
+        "Chicken with cheese, spinach, herbs, and sun-dried tomatoes.",
+      price: "995.55",
+    },
+    {
+      name: "Beef fajita",
+      description: "Beef strips, onion, capsicum, Indian spices, and tortilla.",
+      price: "705.75",
+    },
+    {
+      name: "Sautéed beef fillet with eggplant crush",
+      description:
+        "Beef fillet cubes with gravy and special eggplant, served with fried potatoes.",
+      price: "715.55",
+    },
+    {
+      name: "Grilled lamb loin skewer",
+      description:
+        "Lamb loin with rosemary and garlic, served with mushroom rice, grilled tomato, pepper, and red wine sauce.",
+      price: "850",
+    },
+    {
+      name: "South African grilled chicken breast",
+      description: "Grilled chicken breast in mushroom sauce.",
+      price: "435.25",
+    },
+    {
+      name: "Yebeg tibs",
+      description:
+        "Lamb cubes mixed with vegetables and spices, served with injera.",
+      price: "450",
+    },
   ],
   snacks: [
-    { name: "Beef burger", description: "With tomato and lettuce, served with fries.", price: "575" },
-    { name: "Cheese burger", description: "With cheese or fried egg, served with fries.", price: "597" },
-    { name: "Double decker burger (herbed or plain)", description: "With fried egg, cheese, fries, and salad.", price: "755" },
-    { name: "Dreamliner club sandwich", description: "Fried egg, beef meat, cheese, chicken mortadella, mayonnaise, and fries.", price: "600" },
-    { name: "Chicken sandwich", description: "Grilled chicken, BBQ sauce, mayonnaise, lettuce, and fries.", price: "597" },
-    { name: "Mediterranean sandwich", description: "Mushroom, onion, garlic, carrot, zucchini stuffed bread.", price: "575" },
-    { name: "Tuna sandwich", description: "Tuna, tomato, lettuce, mayonnaise, baguette bread.", price: "555" },
-    { name: "Croque monsieur", description: "Toasted chicken mortadella and cheese sandwich with fries.", price: "495" },
-    { name: "Egg tomato on toast", description: "Herbed tomato with fried egg on toast and fries.", price: "399" },
-    { name: "Vegetable spring rolls", description: "Served with sweet and sour sauce.", price: "215" },
-    { name: "Vegetable samosa", description: "Served with sweet and sour sauce.", price: "215" },
+    {
+      name: "Beef burger",
+      description: "With tomato and lettuce, served with fries.",
+      price: "575",
+    },
+    {
+      name: "Cheese burger",
+      description: "With cheese or fried egg, served with fries.",
+      price: "597",
+    },
+    {
+      name: "Double decker burger (herbed or plain)",
+      description: "With fried egg, cheese, fries, and salad.",
+      price: "755",
+    },
+    {
+      name: "Dreamliner club sandwich",
+      description:
+        "Fried egg, beef meat, cheese, chicken mortadella, mayonnaise, and fries.",
+      price: "600",
+    },
+    {
+      name: "Chicken sandwich",
+      description:
+        "Grilled chicken, BBQ sauce, mayonnaise, lettuce, and fries.",
+      price: "597",
+    },
+    {
+      name: "Mediterranean sandwich",
+      description: "Mushroom, onion, garlic, carrot, zucchini stuffed bread.",
+      price: "575",
+    },
+    {
+      name: "Tuna sandwich",
+      description: "Tuna, tomato, lettuce, mayonnaise, baguette bread.",
+      price: "555",
+    },
+    {
+      name: "Croque monsieur",
+      description: "Toasted chicken mortadella and cheese sandwich with fries.",
+      price: "495",
+    },
+    {
+      name: "Egg tomato on toast",
+      description: "Herbed tomato with fried egg on toast and fries.",
+      price: "399",
+    },
+    {
+      name: "Vegetable spring rolls",
+      description: "Served with sweet and sour sauce.",
+      price: "215",
+    },
+    {
+      name: "Vegetable samosa",
+      description: "Served with sweet and sour sauce.",
+      price: "215",
+    },
     { name: "French fries", description: "Served with ketchup.", price: "225" },
   ],
   pizza: [
@@ -160,17 +324,39 @@ const originalMenuData: Record<string, MenuItem[]> = {
     { name: "Veggie/Healthy/Fasting (S/L)", price: "400/575" },
   ],
   sandwiches: [
-    { name: "Continental", description: "Chicken, garlic, ginger, lettuce, cucumber, tomato, olives.", price: "486.40" },
-    { name: "Beef/Cheese burger", description: "Double Cajun spice chicken patty, cheddar, lettuce, and tomato.", price: "425" },
-    { name: "Dreamliner club sandwich", description: "Flat omelet, grilled chicken, avocado, tomato, and cheese.", price: "477" },
+    {
+      name: "Continental",
+      description:
+        "Chicken, garlic, ginger, lettuce, cucumber, tomato, olives.",
+      price: "486.40",
+    },
+    {
+      name: "Beef/Cheese burger",
+      description:
+        "Double Cajun spice chicken patty, cheddar, lettuce, and tomato.",
+      price: "425",
+    },
+    {
+      name: "Dreamliner club sandwich",
+      description: "Flat omelet, grilled chicken, avocado, tomato, and cheese.",
+      price: "477",
+    },
     { name: "Tuna sandwich", price: "455.57" },
     { name: "Veg sandwich", price: "299.99" },
     { name: "Chicken sandwich", price: "455.57" },
   ],
   canape: [
-    { name: "Chicken square", description: "Chicken fillet with capsicum, onion, and oyster sauce.", price: "475" },
+    {
+      name: "Chicken square",
+      description: "Chicken fillet with capsicum, onion, and oyster sauce.",
+      price: "475",
+    },
     { name: "Fried mozzarella cheese", price: "510" },
-    { name: "Steak canape", description: "Sliced beef fillet on bread.", price: "410" },
+    {
+      name: "Steak canape",
+      description: "Sliced beef fillet on bread.",
+      price: "410",
+    },
   ],
   "sweet-corner": [
     { name: "Chocolate cake", price: "235" },
@@ -191,7 +377,11 @@ const originalMenuData: Record<string, MenuItem[]> = {
   "kids-menu": [
     { name: "Chicken noodle soup", price: "277" },
     { name: "Oatmeal", price: "255" },
-    { name: "Breaded chicken fingers", description: "With fries and house-made BBQ sauce", price: "205" },
+    {
+      name: "Breaded chicken fingers",
+      description: "With fries and house-made BBQ sauce",
+      price: "205",
+    },
     { name: "Mini burger", price: "397" },
     { name: "French fries", price: "255" },
     { name: "Seasonal roast vegetables", price: "245" },
@@ -220,7 +410,7 @@ const originalMenuData: Record<string, MenuItem[]> = {
     { name: "Sparkling water", price: "90" },
     { name: "Soda / Soft drinks", price: "115" },
   ],
-}
+};
 
 const menuData: Record<string, MenuItem[]> = Object.fromEntries(
   Object.entries(originalMenuData).map(([cat, items]) => [
@@ -230,7 +420,7 @@ const menuData: Record<string, MenuItem[]> = Object.fromEntries(
       price: applyMarkupToPrice(item.price),
     })),
   ]),
-)
+);
 
 export const oakRoomCategories = [
   { id: "breakfast", name: "Breakfast" },
@@ -252,22 +442,25 @@ export const oakRoomCategories = [
   { id: "kids-menu", name: "Kids Menu" },
   { id: "hot-beverages", name: "Hot Beverages" },
   { id: "water-soft-drinks", name: "Water & Soft Drinks" },
-]
+];
 
 export function OakRoomMenuSection({ activeTab }: { activeTab: string }) {
-  const items = menuData[activeTab] || []
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const itemsPerPage = 2
+  const items = menuData[activeTab] || [];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 2;
 
-  const totalPages = Math.ceil(items.length / itemsPerPage)
-  const currentItems = items.slice(currentIndex * itemsPerPage, (currentIndex + 1) * itemsPerPage)
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+  const currentItems = items.slice(
+    currentIndex * itemsPerPage,
+    (currentIndex + 1) * itemsPerPage,
+  );
 
   const handleNext = () => {
-    if (currentIndex < totalPages - 1) setCurrentIndex(currentIndex + 1)
-  }
+    if (currentIndex < totalPages - 1) setCurrentIndex(currentIndex + 1);
+  };
   const handlePrev = () => {
-    if (currentIndex > 0) setCurrentIndex(currentIndex - 1)
-  }
+    if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
+  };
 
   return (
     <div className="relative">
@@ -311,7 +504,13 @@ export function OakRoomMenuSection({ activeTab }: { activeTab: string }) {
             >
               <div className="flex flex-col sm:flex-row gap-6 p-6">
                 <div className="flex-shrink-0 w-full sm:w-44 h-44 relative rounded-lg overflow-hidden border-2 border-amber-500/30 shadow-md">
-                  <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
+                  <Image
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.name}
+                    fill
+                    loading="lazy"
+                    className="object-cover"
+                  />
                 </div>
                 <div className="flex-1 flex flex-col justify-between min-w-0">
                   <div className="space-y-3">
@@ -319,11 +518,15 @@ export function OakRoomMenuSection({ activeTab }: { activeTab: string }) {
                       {item.name}
                     </h3>
                     {item.description && (
-                      <p className="text-amber-100 text-base leading-relaxed font-sans">{item.description}</p>
+                      <p className="text-amber-100 text-base leading-relaxed font-sans">
+                        {item.description}
+                      </p>
                     )}
                   </div>
                   <div className="flex items-center justify-between mt-4 pt-4 border-t border-amber-500/30">
-                    <span className="font-serif text-2xl font-bold text-amber-500">{item.price} ETB</span>
+                    <span className="font-serif text-2xl font-bold text-amber-500">
+                      {item.price} ETB
+                    </span>
                     <Button className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-sans uppercase tracking-wider text-sm px-6 py-2.5 h-auto">
                       <ShoppingCart className="w-4 h-4 mr-2" />
                       Order
@@ -349,7 +552,5 @@ export function OakRoomMenuSection({ activeTab }: { activeTab: string }) {
         </div>
       )}
     </div>
-  )
+  );
 }
-
-

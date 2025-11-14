@@ -952,16 +952,16 @@ const menuData: Record<string, MenuItem[]> = {
 };
 
 const categories = [
-  { id: "main-dishes", name: "Main Dishes", icon: "🍽️" },
+  { id: "main-dishes", name: "Main Dish", icon: "🍽️" },
   { id: "breakfast", name: "Breakfast", icon: "🥞" },
   { id: "pizza", name: "Pizza", icon: "🍕" },
-  { id: "salads", name: "Salads", icon: "🥗" },
-  { id: "snacks", name: "Snacks", icon: "🍟" },
-  { id: "drinks", name: "Drinks", icon: "🥤" },
-  { id: "hot-drinks", name: "Hot Drinks", icon: "☕" },
+  { id: "salads", name: "Salad", icon: "🥗" },
+  { id: "snacks", name: "Snack", icon: "🍟" },
+  { id: "drinks", name: "Drink", icon: "🥤" },
+  { id: "hot-drinks", name: "Hot Drink", icon: "☕" },
   { id: "wine", name: "Wine", icon: "🍷" },
-  { id: "alcohols", name: "Alcohols", icon: "🥃" },
-  { id: "cocktails", name: "Cocktails", icon: "🍸" },
+  { id: "alcohols", name: "Alcohol", icon: "🥃" },
+  { id: "cocktails", name: "Cocktail", icon: "🍸" },
 ];
 
 export function OakMenuSection({ activeTab }: { activeTab: string }) {
@@ -1038,6 +1038,7 @@ export function OakMenuSection({ activeTab }: { activeTab: string }) {
                     src={item.image || "/placeholder.svg"}
                     alt={item.name}
                     fill
+                    loading="lazy"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {(item.isSpecial || item.isNew) && (

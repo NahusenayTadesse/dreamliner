@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+
+import { Instagram, Facebook, Phone, Clock, MapPin, Mail } from "lucide-react";
+
 import { LoadingScreen } from "@/components/loading-screen";
 import {
   OakMenuSection as OakRoomMenuSection,
@@ -61,10 +64,10 @@ export default function OakRoomPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-base md:text-lg text-amber-100 mb-12 font-light max-w-xl mx-auto leading-relaxed font-sans italic"
-          >
-            Room Service • 17% included in prices
-          </motion.p>
+            className="text-base wrap-break-words text-balance whitespace-normal md:text-md  mb-12 font-light w-[80%]
+ mx-auto leading-relaxed font-sans italic text-amber-100"
+          ></motion.p>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,7 +87,7 @@ export default function OakRoomPage() {
               variant="outline"
               className="border-2 border-amber-500/60 text-amber-100 hover:bg-amber-500 hover:text-slate-900 px-10 py-6 text-sm font-medium uppercase tracking-wider"
             >
-              <a href="tel:+251900000000">Call Room Service</a>
+              <a href="tel:0985 767 380">Call Room Service</a>
             </Button>
           </motion.div>
         </div>
@@ -117,14 +120,14 @@ export default function OakRoomPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-2 mb-12 border-y border-amber-500/40 py-6"
+            className="flex flex-wrap sticky top-0 bg-slate-800/10 backdrop-blur-md z-50 justify-center gap-2 mb-12 border-y border-amber-500/40 py-6"
           >
             {oakRoomCategories.map((c) => (
               <Button
                 key={c.id}
                 onClick={() => setActiveTab(c.id)}
                 variant="ghost"
-                className={`capitalize px-4 py-2 text-xs uppercase tracking-wider transition-all duration-300 font-sans ${activeTab === c.id ? "bg-amber-500 text-slate-900" : "text-amber-100/60 hover:text-amber-100 hover:bg-amber-500/20"}`}
+                className={`px-4 py-2 text-xs uppercase  tracking-wider transition-all duration-300 font-sans ${activeTab === c.id ? "bg-amber-500 text-slate-900" : "text-amber-100/60 hover:text-amber-100 hover:bg-amber-500/20"}`}
               >
                 {c.name}
               </Button>
@@ -132,6 +135,83 @@ export default function OakRoomPage() {
           </motion.div>
 
           <OakRoomMenuSection activeTab={activeTab} />
+          <p className="text-amber-100/60 text-center my-8 text-sm uppercase tracking-wider font-sans">
+            ALL PRICES ARE IN ETB & EXCLUSIVE OF 10% SERVICE CHARGE AND 15% VAT
+          </p>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-slate-800">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-12 bg-amber-500/60" />
+              <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+              <div className="h-px w-12 bg-amber-500/60" />
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-white">
+              CONTACT US
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="space-y-4">
+                <div className="flex items-center justify-center gap-3">
+                  <Phone className="w-5 h-5 text-amber-500" />
+                  <span className="text-lg text-amber-100">
+                    <a href="tel:+251 985 767 380">+251 985 767 380</a>
+                  </span>
+                </div>
+                <div className="flex items-center justify-center gap-3">
+                  <Clock className="w-5 h-5 text-amber-500" />
+                  <span className="text-lg text-amber-100">24/7</span>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-center gap-3">
+                  <Mail className="w-5 h-5 text-amber-500" />
+                  <span className="text-lg text-amber-100">
+                    reservation@dreamlinerhotel.com
+                  </span>
+                </div>
+                <div className="flex items-center justify-center gap-3">
+                  <MapPin className="w-5 h-5 text-amber-500" />
+                  <span className="text-lg text-amber-100">
+                    Dreamliner Hotel, Addis Ababa
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center gap-4">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() =>
+                  window.open("https://instagram.com/oakrestaurant", "_blank")
+                }
+                className="border-2 border-amber-500/60 text-amber-100 hover:border-amber-500 hover:bg-amber-500 hover:text-slate-900 transition-all duration-300"
+              >
+                <Instagram className="w-4 h-4 mr-2" />
+                Instagram
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() =>
+                  window.open("https://facebook.com/oakrestaurant", "_blank")
+                }
+                className="border-2 border-amber-500/60 text-amber-100 hover:border-amber-500 hover:bg-amber-500 hover:text-slate-900 transition-all duration-300"
+              >
+                <Facebook className="w-4 h-4 mr-2" />
+                Facebook
+              </Button>
+            </div>
+            <div className="mt-8"></div>
+          </motion.div>
         </div>
       </section>
     </main>
