@@ -1439,15 +1439,27 @@ export function MenuSection({ activeTab }: { activeTab: string }) {
     console.log("[v0] Order placed for:", itemName);
     // Add order logic here
   };
+  const drinkCategories = [
+    "cocktails and mocktails",
+    "beers and cider",
+    "spirits",
+    "wines",
+    "signature cocktails",
+    "Hot Drinks",
+    "non alcholic drinks",
+  ];
+  const applyRoomServiceMarkup = (input: string): string => {
+    return input.replace(/\d[\d,]*/g, (numStr) => {
+      // Remove commas to parse the number
+      const numeric = parseInt(numStr.replace(/,/g, ""), 10);
+      if (isNaN(numeric)) return numStr;
 
-  const applyRoomServiceMarkup = (price: string): string => {
-    // Extract the number from price string (e.g., "999br" -> 999)
-    const match = price.match(/(\d+)/);
-    if (!match) return price;
+      // Apply 17% markup
+      const updated = Math.round(numeric * 1.17);
 
-    const basePrice = parseInt(match[1]);
-    const roomPrice = Math.round(basePrice * 1.17); // 17% markup
-    return price.replace(/\d+/, roomPrice.toString());
+      // Return with comma formatting
+      return updated.toLocaleString();
+    });
   };
 
   return (
@@ -1491,8 +1503,8 @@ export function MenuSection({ activeTab }: { activeTab: string }) {
               className="group relative bg-card border-2 border-border/40 rounded-lg overflow-hidden hover:border-primary/40 hover:shadow-xl transition-all duration-300"
             >
               <div className="flex flex-col sm:flex-row gap-6 p-6">
-                {!["breads", "drinks"].includes(activeTab) && (
-                  <div className="flex-shrink-0 w-full sm:w-44 lg:h-44 h-64 relative rounded-lg overflow-hidden border-2 border-border/30 shadow-md">
+                {!drinkCategories.includes(activeTab) && (
+                  <div className="shrink-0 w-full sm:w-44 lg:h-44 h-64 relative rounded-lg overflow-hidden border-2 border-border/30 shadow-md">
                     <Image
                       src={
                         item?.image?.trim() ? item.image : "/placeholder.svg"

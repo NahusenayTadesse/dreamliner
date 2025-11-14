@@ -470,262 +470,263 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Camus V.S.O.P (100cl)",
       description: "Premium cognac",
-      price: "650 / 20.304",
+      price: "Bottle: 20.304br | Glass: 650br",
       image: "/camus-vsop-100cl.png",
     },
     {
       name: "Courvoisier V.S (70cl)",
       description: "Fine cognac",
-      price: "620 / 20.270",
+      price: "Bottle: 20.270br | Glass: 620br",
       image: "/courvoisier-vs-70cl.png",
     },
     {
       name: "Camus Cognac X.O (70cl)",
       description: "Extra old cognac",
-      price: "1125 / 65,500",
+      price: "Bottle: 65.500br | Glass: 1.125br",
       image: "/camus-cognac-xo-70cl.png",
     },
     {
       name: "Remy Martin V.S.O.P (100cl)",
       description: "Premium cognac",
-      price: "1,025 / 24,956",
+      price: "Bottle: 24.956br | Glass: 1.025br",
       image: "/remy-martin-vsop-100cl.png",
     },
     {
       name: "Remy Martin X.O (70cl)",
       description: "Extra old cognac",
-      price: "1,590 / 79,000",
+      price: "Bottle: 79.000br | Glass: 1.590br",
       image: "/remy-martin-xo-70cl.png",
     },
     {
       name: "Beefeater Gin",
       description: "Premium gin",
-      price: "355 / 1.200",
+      price: "Bottle: 1.200br | Glass: 355br",
       image: "/beefeater-gin.png",
     },
     {
       name: "Beefeater Pink Gin (100cl)",
       description: "Pink gin",
-      price: "355 / 10,975",
+      price: "Bottle: 10.975br | Glass: 355br",
       image: "/beefeater-pink-gin-100cl.png",
     },
     {
       name: "Bombay Sapphire (70cl)",
       description: "Premium gin",
-      price: "355 / 12,100",
+      price: "Bottle: 12.100br | Glass: 355br",
       image: "/bombay-sapphire-70cl.png",
     },
     {
       name: "Gordon's Gin",
       description: "Classic gin",
-      price: "315 / 9,997",
+      price: "Bottle: 9.997br | Glass: 315br",
       image: "/gordons-gin.png",
     },
     {
       name: "Bacardi White (100cl)",
       description: "White rum",
-      price: "370 / 15.011",
+      price: "Bottle: 15.011br | Glass: 370br",
       image: "/bacardi-white-100cl.png",
     },
     {
       name: "Bacardi Gold (100cl)",
       description: "Gold rum",
-      price: "350 / 14.221",
+      price: "Bottle: 14.221br | Glass: 350br",
       image: "/bacardi-gold-100cl.png",
     },
     {
       name: "Captain Morgan (100cl)",
       description: "Spiced rum",
-      price: "350 / 14,150",
+      price: "Bottle: 14.150br | Glass: 350br",
       image: "/captain-morgan-100cl.png",
     },
     {
       name: "Malibu (100cl)",
       description: "Coconut rum",
-      price: "200 / 5,525",
+      price: "Bottle: 5.525br | Glass: 200br",
       image: "/malibu-100cl.png",
     },
     {
       name: "J.W Black Label (50cl, 100cl)",
       description: "Premium whiskey",
-      price: "375 / 7.700/6.995",
+      price: "Bottle: 7.700/6.995br | Glass: 375br",
       image: "/jw-black-label-50cl-100cl.png",
     },
     {
       name: "J.W Double Black Label (50cl, 100cl)",
       description: "Premium whiskey",
-      price: "405 / 7.905/20.000",
+      price: "Bottle: 7.905/20.000br | Glass: 405br",
       image: "/jw-double-black-label-50cl-100cl.png",
     },
     {
       name: "J.W Blue Label (100cl)",
       description: "Ultra premium whiskey",
-      price: "4154 / 97,997",
+      price: "Bottle: 97.997br | Glass: 4.154br",
       image: "/jw-blue-label-100cl.png",
     },
     {
       name: "J.W Gold Label (100cl)",
       description: "Premium whiskey",
-      price: "555 / 23,990",
+      price: "Bottle: 23.990br | Glass: 555br",
       image: "/jw-gold-label-100cl.png",
     },
     {
       name: "J.W Red Label (50cl, 100cl)",
       description: "Classic whiskey",
-      price: "295 / 6.933/11.000",
+      price: "Bottle: 6.933/11.000br | Glass: 295br",
       image: "/jw-red-label-50cl-100cl.png",
     },
     {
       name: "Jack Daniel's (50cl, 100cl)",
       description: "Tennessee whiskey",
-      price: "355 / 6.500/15.000",
+      price: "Bottle: 6.500/15.000br | Glass: 355br",
       image: "/jack-daniels-50cl-100cl.png",
     },
     {
       name: "Chivas 12 (50cl, 100cl)",
       description: "Premium scotch",
-      price: "395 / 15.700",
+      price: "Bottle: 15.700br | Glass: 395br",
       image: "/chivas-12-50cl-100cl.png",
     },
     {
       name: "Glenfiddich 15 (100cl)",
       description: "Single malt scotch",
-      price: "700 / 28,500",
+      price: "Bottle: 28.500br | Glass: 700br",
       image: "/glenfiddich-15-100cl.png",
     },
     {
       name: "Glenfiddich 18 (75cl)",
       description: "Aged single malt",
-      price: "1000 / 39,900",
+      price: "Bottle: 39.900br | Glass: 1.000br",
       image: "/glenfiddich-18-75cl.png",
     },
     {
       name: "Glenfiddich 21 (70cl)",
       description: "Ultra premium single malt",
-      price: "1100 / 59,900",
+      price: "Bottle: 59.900br | Glass: 1.100br",
       image: "/glenfiddich-21-70cl.png",
     },
     {
       name: "Dimple 15 (100cl)",
       description: "Premium scotch",
-      price: "455 / 27,500",
+      price: "Bottle: 27.500br | Glass: 455br",
       image: "/dimple-15-100cl.png",
     },
     {
       name: "White Horse (100cl)",
       description: "Classic scotch",
-      price: "250 / 8,900",
+      price: "Bottle: 8.900br | Glass: 250br",
       image: "/white-horse-100cl.png",
     },
     {
       name: "Absolut (50cl, 100cl)",
       description: "Premium vodka",
-      price: "275 / 3.950/6.970",
+      price: "Bottle: 3.950/6.970br | Glass: 275br",
       image: "/absolut-50cl-100cl.png",
     },
     {
       name: "Grey Goose (100cl)",
       description: "Ultra premium vodka",
-      price: "399 / 10,997",
+      price: "Bottle: 10.997br | Glass: 399br",
       image: "/grey-goose-100cl.png",
     },
     {
       name: "Ciroc Blue (100cl)",
       description: "Premium vodka",
-      price: "275 / 10,500",
+      price: "Bottle: 10.500br | Glass: 275br",
       image: "/ciroc-blue-100cl.png",
     },
     {
       name: "Smirnoff (75cl)",
       description: "Classic vodka",
-      price: "200 / 3,475",
+      price: "Bottle: 3.475br | Glass: 200br",
       image: "/smirnoff-75cl.png",
     },
     {
       name: "Stolichnaya Gold (100cl)",
       description: "Premium vodka",
-      price: "315 / 7,509",
+      price: "Bottle: 7.509br | Glass: 315br",
       image: "/stolichnaya-gold-100cl.png",
     },
     {
       name: "Stolichnaya Elite (100cl)",
       description: "Ultra premium vodka",
-      price: "367 / 10,999",
+      price: "Bottle: 10.999br | Glass: 367br",
       image: "/stolichnaya-elite-100cl.png",
     },
     {
       name: "Stolichnaya Vodka (50cl, 75cl)",
       description: "Classic vodka",
-      price: "295 / 3.900/6.195",
+      price: "Bottle: 3.900/6.195br | Glass: 295br",
       image: "/stolichnaya-vodka-50cl-75cl.png",
     },
     {
       name: "Sky Vodka (100cl)",
       description: "Premium vodka",
-      price: "200 / 3,870",
+      price: "Bottle: 3.870br | Glass: 200br",
       image: "/sky-vodka-100cl.png",
     },
     {
       name: "Russian Standard Vodka (100cl)",
       description: "Premium vodka",
-      price: "295 / 8,015",
+      price: "Bottle: 8.015br | Glass: 295br",
       image: "/russian-standard-vodka-100cl.png",
     },
     {
       name: "Winter Palace",
       description: "Premium vodka",
-      price: "200 / 4,764",
+      price: "Bottle: 4.764br | Glass: 200br",
       image: "/winter-palace.png",
     },
     {
       name: "Ketel One Vodka (75cl)",
       description: "Premium vodka",
-      price: "275 / 7,897",
+      price: "Bottle: 7.897br | Glass: 275br",
       image: "/ketel-one-vodka-75cl.png",
     },
     {
       name: "Baileys Irish (100cl)",
       description: "Irish cream liqueur",
-      price: "250 / 7,000",
+      price: "Bottle: 7.000br | Glass: 250br",
       image: "/baileys-irish-100cl.png",
     },
     {
       name: "Drambuie (100cl)",
       description: "Scotch liqueur",
-      price: "325 / 8,988",
+      price: "Bottle: 8.988br | Glass: 325br",
       image: "/drambuie-100cl.png",
     },
     {
       name: "Cointreau (100cl)",
       description: "Orange liqueur",
-      price: "345 / 9,100",
+      price: "Bottle: 9.100br | Glass: 345br",
       image: "/cointreau-100cl.png",
     },
     {
       name: "Amarula (100cl)",
       description: "Cream liqueur",
-      price: "256 / 6,765",
+      price: "Bottle: 6.765br | Glass: 256br",
       image: "/amarula-100cl.png",
     },
     {
       name: "Sambuca (75cl)",
       description: "Anise liqueur",
-      price: "267 / 7,015",
+      price: "Bottle: 7.015br | Glass: 267br",
       image: "/sambuca-75cl.png",
     },
     {
       name: "Kahlua (100cl)",
       description: "Coffee liqueur",
-      price: "200 / 6,910",
+      price: "Bottle: 6.910br | Glass: 200br",
       image: "/kahlua-100cl.png",
     },
     {
       name: "Jaegermeister (100cl)",
       description: "Herbal liqueur",
-      price: "295 / 7,999",
+      price: "Bottle: 7.999br | Glass: 295br",
       image: "/jaegermeister-100cl.png",
     },
   ],
+
   "non-alcoholic-drinks": [
     {
       name: "Sparkling Water Small/Medium",
@@ -2099,6 +2100,21 @@ function applyMarkupToPrice(price: string): string {
   }
   return trim;
 }
+import { usePathname } from "next/navigation";
+
+const applyRoomServiceMarkup = (input: string): string => {
+  return input.replace(/\d[\d,]*/g, (numStr) => {
+    // Remove commas to parse the number
+    const numeric = parseInt(numStr.replace(/,/g, ""), 10);
+    if (isNaN(numeric)) return numStr;
+
+    // Apply 17% markup
+    const updated = Math.round(numeric * 1.17);
+
+    // Return with comma formatting
+    return updated.toLocaleString();
+  });
+};
 export function OakMenuSection({ activeTab }: { activeTab: string }) {
   const items = menuData[activeTab] || [];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -2206,7 +2222,10 @@ export function OakMenuSection({ activeTab }: { activeTab: string }) {
                   </div>
                   <div className="flex items-center justify-between mt-4 pt-4 border-t border-amber-500/30">
                     <span className="font-serif text-2xl font-bold text-amber-500">
-                      {applyMarkupToPrice(item.price)} ETB
+                      {usePathname() === "/oak-restaurant"
+                        ? item.price
+                        : applyRoomServiceMarkup(item.price)}{" "}
+                      ETB
                     </span>
                     {/*<Button
                                       onClick={() => handleOrder(item.name)}

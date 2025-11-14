@@ -2,14 +2,20 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Phone, MapPin, Instagram, Facebook, Mail, Clock } from "lucide-react";
+import {
+  Phone,
+  MapPin,
+  Instagram,
+  Facebook,
+  Mail,
+  Clock,
+  Home,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LoadingScreen } from "@/components/loading-screen";
-import { MenuSection } from "@/components/menu-section";
+import { MenuSection as RoomMenuSection } from "@/components/zaika-roommenu";
 
-let year = new Date().getFullYear();
-
-export default function Home() {
+export default function ZaikaRoomPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("thali");
 
@@ -28,12 +34,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      <section className="relative min-h-screen flex items-center justify-center bg-background">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
         {/* Decorative border frame */}
         <div className="absolute inset-8 border-2 border-border/40 pointer-events-none" />
         <div className="absolute inset-12 border border-border/20 pointer-events-none" />
 
-        <div className="relative z-10 text-center px-4 mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           {/* Ornamental top decoration */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -54,7 +60,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xs uppercase tracking-[0.4em] text-foreground/70 font-medium mb-8 font-sans"
           >
-            Authentic Indian Cuisine
+            🏨 Room Service • Authentic Indian Cuisine
           </motion.p>
 
           <motion.h1
@@ -101,30 +107,17 @@ export default function Home() {
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-6 text-sm font-medium uppercase tracking-wider transition-all duration-300 font-sans"
             >
-              View Menu
+              View Room Service Menu
             </Button>
             <Button
-              asChild
+              onClick={() => window.open("tel:+251 985 767 380")}
               size="lg"
               variant="outline"
-              className="border-2 border-foreground/30 text-foreground hover:bg-foreground hover:text-background px-10 py-6 text-sm font-medium uppercase tracking-wider transition-all duration-300 bg-transparent font-sans"
+              className="border-2 border-border hover:border-primary hover:bg-primary hover:text-primary-foreground px-10 py-6 text-sm font-medium uppercase tracking-wider transition-all duration-300 font-sans"
             >
-              <a href="tel:+251 985 767 380">Call to Order</a>
+              <Phone className="w-4 h-4 mr-2" />
+              Call Room Service
             </Button>
-          </motion.div>
-
-          {/* Ornamental bottom decoration */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-16"
-          >
-            <div className="flex items-center justify-center gap-4">
-              <div className="h-px w-16 bg-border" />
-              <div className="w-2 h-2 rotate-45 border border-border" />
-              <div className="h-px w-16 bg-border" />
-            </div>
           </motion.div>
         </div>
       </section>
@@ -168,7 +161,7 @@ export default function Home() {
               "biryanis",
               "breads",
               "desserts",
-              "cocktails and mocktails",
+              "cocktails and cocktails",
               "signature cocktails",
 
               "beers and cider",
@@ -195,7 +188,7 @@ export default function Home() {
           </motion.div>
 
           {/* Menu Items */}
-          <MenuSection activeTab={activeTab} />
+          <RoomMenuSection activeTab={activeTab} />
           <p className="text-lg text-center my-8 text-foreground/50 font-sans italic">
             Prices not inclusive of 10% service charge and 15% VAT
           </p>
@@ -224,8 +217,10 @@ export default function Home() {
               creating an authentic experience that celebrates India's rich
               gastronomic heritage.
             </p>
-            <p className="text-foreground/70 text-sm italic font-sans">
-              From the vibrant streets of Delhi to the royal courts of Rajasthan
+            <p className="text-foreground/80 text-base leading-relaxed font-sans">
+              From our kitchen to your room, we deliver the same exceptional
+              quality and flavors that have made us a beloved destination for
+              authentic Indian cuisine.
             </p>
           </motion.div>
         </div>
@@ -383,7 +378,7 @@ export default function Home() {
             <div className="h-px w-8 bg-border" />
           </div>
           <p className="text-xs text-foreground/60 mb-2 font-sans uppercase tracking-wider">
-            © {year} Zaika
+            © {new Date().getFullYear()} Zaika
           </p>
         </div>
       </footer>
