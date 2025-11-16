@@ -1291,6 +1291,46 @@ export const menuData: Record<string, MenuItem[]> = {
       image: "",
     },
   ],
+  vegan: [
+    {
+      name: "Paneer Pakora",
+      description: "Spiced paneer, besan or chickpea flour batter",
+      price: "750br",
+      image: "",
+    },
+    {
+      name: "Mix Pakora",
+      description: "Vegetable, chick peas, butter",
+      price: "750br",
+      image: "",
+    },
+    {
+      name: "Pineapple Cheese Pakora",
+      description:
+        "Pineapple, cheese, yoghurt, chickpea powder, fresh lemon, Indian spices",
+      price: "990",
+      image: "",
+    },
+
+    {
+      name: "Samosas (Full)",
+      description: "Traditional samosas",
+      price: "590br",
+      image: "",
+    },
+    {
+      name: "Samosas (Half)",
+      description: "Traditional samosas",
+      price: "390",
+      image: "",
+    },
+    {
+      name: "Aloo Tikki",
+      description: "Boiled & mashed potatoes, spices and herb",
+      price: "420",
+      image: "",
+    },
+  ],
 };
 
 export function MenuSection({ activeTab }: { activeTab: string }) {

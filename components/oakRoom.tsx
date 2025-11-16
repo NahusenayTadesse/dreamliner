@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react";
@@ -25,24 +23,7 @@ const menuData: Record<string, MenuItem[]> = {
       price: "675",
       image: "/Stir-fried Chiken.webp",
     },
-    {
-      name: "Chicken Wings in Honey Sauce",
-      description: "Crispy chicken wings glazed with sweet honey sauce",
-      price: "455",
-      image: "/chiken wings in honey sauce.webp",
-    },
-    {
-      name: "Chicken Drumstick",
-      description: "Grilled chicken drumstick with herbs and spices",
-      price: "410",
-      image: "/chicken drumsticks.webp",
-    },
-    {
-      name: "Chicken Kebab with French Fries",
-      description: "Marinated chicken kebab served with crispy French fries",
-      price: "399",
-      image: "/chicken kebab with fries.webp",
-    },
+
     // Beef
     {
       name: "Beef Steak",
@@ -50,26 +31,7 @@ const menuData: Record<string, MenuItem[]> = {
       price: "850",
       image: "/beef-steak.png",
     },
-    {
-      name: "Beef Wrap",
-      description:
-        "Beef fillet with onion, garlic, green chili, cream, cheese served with French fries",
-      price: "450",
-      image: "/beef wrap.webp",
-    },
-    {
-      name: "Two Mini Beef Burger",
-      description:
-        "Minced beef, egg, garlic, bread crumbs, mixed spice, with French fries",
-      price: "750",
-      image: "/two mini beef burger.webp",
-    },
-    {
-      name: "Meat Kebab with French Fries",
-      description: "Grilled meat kebab served with crispy French fries",
-      price: "399",
-      image: "/meat kebab.webp",
-    },
+
     // Fish
     {
       name: "Grilled Fish",
@@ -77,12 +39,7 @@ const menuData: Record<string, MenuItem[]> = {
       price: "720",
       image: "/grilled-fish.png",
     },
-    {
-      name: "Fish Finger with French Fries",
-      description: "Crispy fish fingers served with French fries",
-      price: "500",
-      image: "/fish finger with french fries.webp",
-    },
+
     {
       name: "Fish Amritsari",
       description: "Nile perch, chickpea flour, spices, herbs",
@@ -134,20 +91,6 @@ const menuData: Record<string, MenuItem[]> = {
       description: "Triple-decker sandwich with chicken, bacon, and vegetables",
       price: "450",
       image: "/club-sandwich.png",
-    },
-    {
-      name: "Chicken Wrap",
-      description:
-        "Grilled chicken, onion, garlic, green chili, fresh cream, cheese served with French fries",
-      price: "350",
-      image: "/chicken wrap.webp",
-    },
-    {
-      name: "Vegetable Wrap",
-      description:
-        "Seasonal vegetables, onion, garlic, green chili, fresh cream, cheese served with French fries",
-      price: "400",
-      image: "/vegetable wrap.webp",
     },
   ],
   breakfast: [
@@ -330,6 +273,12 @@ const menuData: Record<string, MenuItem[]> = {
       image: "/vegetable-samosa.png",
     },
     {
+      name: "Fish Finger with French Fries",
+      description: "Crispy fish fingers served with French fries",
+      price: "500",
+      image: "/fish finger with french fries.webp",
+    },
+    {
       name: "Tuna Canapés",
       description: "Elegant tuna canapés",
       price: "499",
@@ -340,6 +289,30 @@ const menuData: Record<string, MenuItem[]> = {
       description: "Selection of assorted canapés",
       price: "399",
       image: "/special-assorted-canapés.png",
+    },
+    {
+      name: "Meat Kebab with French Fries",
+      description: "Grilled meat kebab served with crispy French fries",
+      price: "399",
+      image: "/meat kebab.webp",
+    },
+    {
+      name: "Chicken Wings in Honey Sauce",
+      description: "Crispy chicken wings glazed with sweet honey sauce",
+      price: "455",
+      image: "/chiken wings in honey sauce.webp",
+    },
+    {
+      name: "Chicken Drumstick",
+      description: "Grilled chicken drumstick with herbs and spices",
+      price: "410",
+      image: "/chicken drumsticks.webp",
+    },
+    {
+      name: "Chicken Kebab with French Fries",
+      description: "Marinated chicken kebab served with crispy French fries",
+      price: "399",
+      image: "/chicken kebab with fries.webp",
     },
   ],
   drinks: [

@@ -161,6 +161,7 @@ export default function ZaikaRoomPage() {
               "biryanis",
               "breads",
               "desserts",
+              "vegan",
               "cocktails and cocktails",
               "signature cocktails",
 

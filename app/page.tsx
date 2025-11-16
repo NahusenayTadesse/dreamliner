@@ -168,6 +168,7 @@ export default function Home() {
               "biryanis",
               "breads",
               "desserts",
+              "vegan",
               "cocktails and mocktails",
               "signature cocktails",
 
