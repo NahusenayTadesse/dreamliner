@@ -20,182 +20,182 @@ const menuData: Record<string, MenuItem[]> = {
       name: "Stir-fried Chicken",
       description:
         "Tender chicken pieces stir-fried with vegetables and aromatic spices",
-      price: "675",
+      price: "810",
       image: "/Stir-fried Chiken.webp",
     },
 
     {
       name: "Chicken Curry",
       description: "Served with steam rice",
-      price: "775",
+      price: "930",
       image: "/Chicken Curry.webp",
     },
 
     {
       name: "South African Grilled Chicken Breast",
       description: "Grilled chicken breast cooked in mushroom sauce",
-      price: "685.75",
+      price: "822.9",
       image: "/South African Grilled Chicken Breast.webp",
     },
 
     // Beef
+    // {
+    //   name: "Beef Medallion",
+    //   description:
+    //     "Cooked in lemon butter sauce & served with French f ries & vegetable",
+    //   price: "575.25",
+    //   image: "",
+    // },
     {
-      name: "Beef Medallion",
-      description:
-        "Cooked in lemon butter sauce & served with French f ries & vegetable",
-      price: "575.25",
-      image: "/Beef Medallion.webp",
-    },
-    {
-      name: "Beef Strogan",
+      name: "Beef Stroganoff",
       description:
         "Cooked in mushroom sauce & served with noodles/rice & vegetables",
-      price: "655.75",
+      price: "786.9",
       image: "/beef stroganoff.webp",
     },
     {
       name: "Mixed Grill",
       description:
         "Beef fillet, chicken, lamb, sausage, fish, served with rice & vegetablen",
-      price: "797",
+      price: "956.4",
       image: "/Mixed Grill Beef fillet.webp",
     },
-    {
-      name: "Pepper Steak",
-      description: "",
-      price: "785",
-      image: "/Pepper-Steak-15.webp",
-    },
+    // {
+    //   name: "Pepper Steak",
+    //   description: "",
+    //   price: "785",
+    //   image: "/Pepper-Steak-15.webp",
+    // },
 
     // Fish
     {
       name: "Grilled Fish",
       description: "Fresh fish grilled with herbs and lemon",
-      price: "720",
+      price: "765",
       image: "/Grilled Fish.webp",
     },
 
-    {
-      name: "Oven Baked Fish",
-      description:
-        "Cooked in lemon butter sauce & served with boiled potatoes & sautéed vegetables",
-      price: "595",
-      image: "/Oven Fish.webp",
-    },
-    {
-      name: "Deep Fried Fish",
-      description:
-        "Cooked in lemon butter sauce and served with vegetable & French- fries",
-      price: "555.25",
-      image: "/Deep Fried Fish.webp",
-    },
-    {
-      name: "Poached Fish",
-      description:
-        "Cooked in white cream sauce & served with boiled vegetables & parsley",
-      price: "510",
-      image: "/Poached Fish.webp",
-    },
+    // {
+    //   name: "Oven Baked Fish",
+    //   description:
+    //     "Cooked in lemon butter sauce & served with boiled potatoes & sautéed vegetables",
+    //   price: "595",
+    //   image: "",
+    // },
+    // {
+    //   name: "Deep Fried Fish",
+    //   description:
+    //     "Cooked in lemon butter sauce and served with vegetable & French- fries",
+    //   price: "555.25",
+    //   image: "/Deep Fried Fish.webp",
+    // },
+    // {
+    //   name: "Poached Fish",
+    //   description:
+    //     "Cooked in white cream sauce & served with boiled vegetables & parsley",
+    //   price: "510",
+    //   image: "/Poached Fish.webp",
+    // },
 
     {
       name: "Fish Goulash",
       description:
         "Shredded fish cooked in tomato, onion & garlic sauce served with steamed rice and vegetable",
-      price: "510",
+      price: "624.24",
       image: "/Fish Goulash.webp",
     },
 
     // Spaghetti
-    {
-      name: "Spaghetti Carbonara",
-      description: "Classic Italian pasta with cream, eggs, and cheese",
-      price: "450",
-      image: "/Spaghetti Carbonara 2.webp",
-    },
-    {
-      name: "Spaghetti Bolognese",
-      description: "Italian pasta with meat sauce",
-      price: "480",
-      image: "/spaghetti-bologna.webp",
-    },
-    {
-      name: "Penne Napolitano",
-      description: "",
-      price: "395",
-      image: "/penne napolitan.webp",
-    },
-    {
-      name: "Penne with Mushroom sauce",
-      description: "",
-      price: "425",
-      image: "/penne-with-mushroom-sauce.webp",
-    },
+    // {
+    //   name: "Spaghetti Carbonara",
+    //   description: "Classic Italian pasta with cream, eggs, and cheese",
+    //   price: "450",
+    //   image: "/Spaghetti Carbonara 2.webp",
+    // },
+    // {
+    //   name: "Spaghetti Bolognese",
+    //   description: "Italian pasta with meat sauce",
+    //   price: "480",
+    //   image: "/spaghetti-bologna.webp",
+    // },
+    // {
+    //   name: "Penne Napolitano",
+    //   description: "",
+    //   price: "395",
+    //   image: "/penne napolitan.webp",
+    // },
+    // {
+    //   name: "Penne with Mushroom sauce",
+    //   description: "",
+    //   price: "425",
+    //   image: "/penne-with-mushroom-sauce.webp",
+    // },
     {
       name: "Spaghetti with Tuna",
       description: "",
-      price: "555",
+      price: "666",
       image: "/Spaghetti-with-Tuna-.webp",
     },
     {
       name: "Spaghetti with Vegetable",
       description: "",
-      price: "395",
+      price: "474",
       image: "/Spaghetti with Vegetable.webp",
     },
-    {
-      name: "Spaghetti with Tomato sauce",
-      description: "",
-      price: "395",
-      image: "/spaghetti with tomato sauce.webp",
-    },
+    // {
+    //   name: "Spaghetti with Tomato sauce",
+    //   description: "",
+    //   price: "395",
+    //   image: "/spaghetti with tomato sauce.webp",
+    // },
     // Burgers
     {
       name: "Classic Beef Burger",
       description: "Beef patty with lettuce, tomato, onion, and special sauce",
-      price: "550",
+      price: "750",
       image: "/Beef Burger.webp",
     },
     {
       name: "Cheese Burger",
       description: "",
-      price: "675",
+      price: "810",
       image: "/cheese-burger.webp",
     },
     {
       name: "Chicken Burger",
       description: "Grilled chicken breast with fresh vegetables",
-      price: "480",
+      price: "738",
       image: "/Chicken burger.webp",
     },
     {
       name: "Fish Burger",
       description: "",
-      price: "597",
+      price: "716.4",
       image: "/Fish  burger.webp",
     },
-    {
-      name: "Ham and cheese sandwich",
-      description: "",
-      price: "615",
-      image: "/Ham and cheese sandwich.webp",
-    },
+    // {
+    //   name: "Ham and cheese sandwich",
+    //   description: "",
+    //   price: "615",
+    //   image: "/Ham and cheese sandwich.webp",
+    // },
     {
       name: "Tuna sandwich",
       description: "",
-      price: "575",
+      price: "690",
       image: "/Tuna sandwich.webp",
     },
-    {
-      name: "Egg sandwich",
-      description: "",
-      price: "415",
-      image: "/Eggsandwich.webp",
-    },
+    // {
+    //   name: "Egg sandwich",
+    //   description: "",
+    //   price: "498",
+    //   image: "/Eggsandwich.webp",
+    // },
     {
       name: "Chicken Sandwich",
       description:
         "Served with chicken, cheese, boiled egg, lettuce and tomato",
-      price: "575",
+      price: "690",
       image: "/chicken sandwich.webp",
     },
     {
@@ -223,68 +223,32 @@ const menuData: Record<string, MenuItem[]> = {
   ],
   breakfast: [
     {
-      name: "Simple Two Eggs",
-      description: "Poached, boiled, scrambled or fried with toast",
-      price: "395",
-      image: "/simple tow eggs.webp",
-    },
-    {
       name: "Omelet",
       description:
         "With onion, bell pepper, spinach, chili, cheese, mushroom and tomato",
-      price: "395",
+      price: "474",
       image: "/omelete.webp",
     },
-    {
-      name: "Three Pancakes",
-      description: "With maple syrup and seasonal fruit",
-      price: "355",
-      image: "/three pancakes.webp",
-    },
-    {
-      name: "French Toast",
-      description: "With maple syrup and seasonal fruit",
-      price: "355",
-      image: "/french toast.webp",
-    },
-    {
-      name: "Three Toast Bread",
-      description: "With butter and jam",
-      price: "325",
-      image: "/three toast bread with butter.webp",
-    },
-    {
-      name: "Oatmeal",
-      description: "With honey cinnamon and strawberry",
-      price: "325",
-      image: "/oat meal with strawberries.webp",
-    },
-    {
-      name: "Buffet Breakfast",
-      description:
-        "Extensive breakfast selection including local dishes, fresh pastries, healthy cereals, eggs & waffle station & much more with your choice of fresh juices, coffee or tea",
-      price: "999",
-      image: "/Buffet Breakfast.webp",
-    },
+
     {
       name: "American Breakfast",
       description:
         "Omelet, fried, boiled, scrambled or poached with onion, chili, cheese mushroom, ham and tomato toast bread & homemade bakery with jam and butter sliced seasonal fruit & fresh juice coffee or tea",
-      price: "715",
+      price: "858",
       image: "/American Breakfast.webp",
     },
     {
       name: "Continental Breakfast",
       description:
         "Toast bread and homemade bakery with jam and butter, slice seasonal fruit, fresh juices, coffee and tea",
-      price: "625",
+      price: "750",
       image: "/Continental Breakfast.webp",
     },
     {
       name: "Chechebsa",
       description:
         "Fresh dough homemade bread scrambles and mixed with berbere butter sauce or honey",
-      price: "425.35",
+      price: "510",
       image: "/B.webp",
     },
   ],
@@ -294,21 +258,21 @@ const menuData: Record<string, MenuItem[]> = {
       name: "Lamb Tibs/Yebeg Tibs",
       description:
         "Lamb cube mixed with vegetable, and spiced butter served with Injera",
-      price: "655",
+      price: "668.1",
       image: "/Lamb Tibs.webp",
     },
     {
       name: "Checkina Tibs",
       description:
         "Dice cut beef fillet with Ethiopian spiced butter sauted with Garlic, diced onion, Green pepper, tomatoes & served with traditional roll of Injera",
-      price: "715",
+      price: "858",
       image: "/Chicken Tibs.webp",
     },
     {
       name: "Special Shiro",
       description:
         "Mitin Shiro, Garlic, Onion, Green chilli, lettuce, tomatoes and Ethiopian spiced butter, served with green salad and traditional roll of Injera",
-      price: "400",
+      price: "480",
       image: "/Special Shiro.webp",
     },
   ],
@@ -316,42 +280,42 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Pizza Margherita",
       description: "Mozzarella cheese, tomato sauce oregano, garlic, oil",
-      price: "575.25",
+      price: "690.3",
       image: "/pizza margherita.webp",
     },
-    {
-      name: "Pizza Al Bero",
-      description:
-        "Mozzarella cheese, tomato sauce, tuna fish, onions, chili, garlic oil, basil",
-      price: "575.75",
-      image: "/Pizza Al Bero.webp",
-    },
+    // {
+    //   name: "Pizza Al Bero",
+    //   description:
+    //     "Mozzarella cheese, tomato sauce, tuna fish, onions, chili, garlic oil, basil",
+    //   price: "57",
+    //   image: "/pizza-al-bero.png",
+    // },
     {
       name: "Pizza Own",
       description:
         "Mozzarella cheese, tomato sauce, olive oil, oregano garlic and your choice of topping",
-      price: "725",
+      price: "870",
       image: "/pizza own.webp",
     },
-    {
-      name: "Pizza Calzone",
-      description:
-        "Mozzarella cheese, tomato sauce, ham, beef sausage, basil, garlic olive",
-      price: "655",
-      image: "/pizza calzone.webp",
-    },
-    {
-      name: "Beef Pizza",
-      description:
-        "Mozzarella cheese, tomato sauce, minced beef, garlic olive, oregano",
-      price: "775",
-      image: "/beef pizza.webp",
-    },
+    // {
+    //   name: "Pizza Calzone",
+    //   description:
+    //     "Mozzarella cheese, tomato sauce, ham, beef sausage, basil, garlic olive",
+    //   price: "655",
+    //   image: "/pizza calzone.webp",
+    // },
+    // {
+    //   name: "Beef Pizza",
+    //   description:
+    //     "Mozzarella cheese, tomato sauce, minced beef, garlic olive, oregano",
+    //   price: "775",
+    //   image: "/beef pizza.webp",
+    // },
     {
       name: "Home Special Pizza",
       description:
         "Mozzarella and Provolone cheese, tomato sauce, minced beef, chicken, chili, garlic oil, basil, vegetable",
-      price: "955",
+      price: "1146",
       image: "/home special pizza.webp",
     },
   ],
@@ -359,23 +323,24 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Healthy Salad",
       description: "Grilled carrot, baby marrow, eggplant, lettuce",
-      price: "450",
+      price: "540",
       image: "/Healthy Salad.webp",
     },
     {
       name: "Chicken Caesar Salad",
       description:
         "Lettuce, grilled/roasted chicken, parmesan cheese, croutons, lemon juice, served with Caesar and salad dressing",
-      price: "425",
+      price: "492",
       image: "/chicken caesar salad.webp",
     },
     {
       name: "Mixed Vegetable Salad",
       description:
         "Carrots, lettuce, onions, tomatoes and seasonal fruits and vegetables served",
-      price: "410",
+      price: "492",
       image: "/mixed vegetable salad.webp",
     },
+    // Soups
     // {
     //   name: "French Onion Soup",
     //   description: "",
@@ -400,13 +365,12 @@ const menuData: Record<string, MenuItem[]> = {
     //   price: "316",
     //   image: "/Vegetable Soup.webp",
     // },
-    // Soups
   ],
   snacks: [
     {
       name: "French Fries",
       description: "Crispy golden French fries",
-      price: "390",
+      price: "306",
       image: "/french fries.webp",
     },
     {
@@ -462,25 +426,25 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Local Beer",
       description: "Local brewery beer",
-      price: "134.38",
+      price: "161.256",
       image: "/local-small-beer.png",
     },
     {
       name: "Arada Beer",
       description: "Premium local beer",
-      price: "150",
+      price: "180",
       image: "/arada-beer.png",
     },
     {
       name: "Heineken",
       description: "International premium beer",
-      price: "169.96",
+      price: "203.95",
       image: "/heineken.png",
     },
     {
       name: "Red Bull",
       description: "Energy drink",
-      price: "700",
+      price: "840",
       image: "/red-bull.png",
     },
   ],
@@ -488,43 +452,43 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Alvinde Reserva Syrah (75cl)",
       description: "Premium imported red wine",
-      price: "3,461",
+      price: "3,350",
       image: "/alvinde-reserva-syrah-75cl.png",
     },
     {
       name: "Louis Eschenauer (75cl)",
       description: "Fine imported wine",
-      price: "5,509",
+      price: "5,309",
       image: "/louis-eschenauer-75cl.png",
     },
     {
       name: "Grand Epoque (75cl)",
       description: "Elegant imported wine",
-      price: "4,798",
+      price: "4,498",
       image: "/grand-epoque-75cl.png",
     },
     {
       name: "Lamothe Parrot (75cl)",
       description: "Premium imported wine",
-      price: "5,467",
+      price: "5,367",
       image: "/lamothe-parrot-75cl.png",
     },
     {
       name: "Sunrise (75cl)",
       description: "Smooth imported wine",
-      price: "3,350",
+      price: "3,300",
       image: "/sunrise-75cl.png",
     },
     {
       name: "Western Cellar Chardonnay (75cl)",
       description: "Premium white wine",
-      price: "6,067",
+      price: "5,450",
       image: "/western-cellar-chardonnay-75cl.png",
     },
     {
       name: "Baron d'Arignac (75cl)",
       description: "Classic imported wine",
-      price: "2,937",
+      price: "2,900",
       image: "/baron-darignac-75cl.png",
     },
     {
@@ -542,7 +506,7 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Two Oceans Chardonnay",
       description: "South African white wine",
-      price: "3,995",
+      price: "3,951",
       image: "/two-oceans-chardonnay.png",
     },
     {
@@ -554,31 +518,31 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Acacia Dry (75cl)",
       description: "Local dry wine",
-      price: "1,995",
+      price: "2,100",
       image: "/acacia-dry-75cl.png",
     },
     {
       name: "Acacia Medium Sweet (75cl)",
       description: "Local medium sweet wine",
-      price: "1,995",
+      price: "2,100",
       image: "/acacia-medium-sweet-75cl.png",
     },
     {
       name: "Rift Valley Cuvee Prestige Chardonnay (75cl)",
       description: "Premium local white wine",
-      price: "2,390",
+      price: "2,200",
       image: "/rift-valley-cuvee-prestige-chardonnay-75cl.png",
     },
     {
       name: "Rift Valley Merlot (75cl)",
       description: "Local red wine",
-      price: "2,390",
+      price: "2,200",
       image: "/rift-valley-merlot-75cl.png",
     },
     {
       name: "Rift Valley Syrah (75cl)",
       description: "Local red wine",
-      price: "2,390",
+      price: "2,200",
       image: "/rift-valley-syrah-75cl.png",
     },
     {
@@ -592,217 +556,217 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Camus V.S.O.P (100cl)",
       description: "Premium cognac",
-      price: "Bottle: 20,304br | Glass: 650br",
+      price: "Bottle: 22,790br | Glass: 910br",
       image: "/camus-vsop-100cl.png",
     },
     {
       name: "Courvoisier V.S (70cl)",
       description: "Fine cognac",
-      price: "Bottle: 20,270br | Glass: 620br",
+      price: "Bottle: 21,500br | Glass: 910br",
       image: "/courvoisier-vs-70cl.png",
     },
     {
       name: "Camus Cognac X.O (70cl)",
       description: "Extra old cognac",
-      price: "Bottle: 65,500br | Glass: 1.125br",
+      price: "Bottle: 69,7850br | Glass: 1,350br",
       image: "/camus-cognac-xo-70cl.png",
     },
     {
       name: "Remy Martin V.S.O.P (100cl)",
       description: "Premium cognac",
-      price: "Bottle: 24,956br | Glass: 1.025br",
+      price: "Bottle: 27,000br | Glass: 1,25br",
       image: "/remy-martin-vsop-100cl.png",
     },
     {
       name: "Remy Martin X.O (70cl)",
       description: "Extra old cognac",
-      price: "Bottle: 79,000br | Glass: 1.590br",
+      price: "Bottle: 79,000br | Glass: 1,799br",
       image: "/remy-martin-xo-70cl.png",
     },
     {
       name: "Beefeater Gin",
       description: "Premium gin",
-      price: "Bottle: 1,200br | Glass: 355br",
+      price: "Bottle: 11,350br | Glass: 395br",
       image: "/beefeater-gin.png",
     },
     {
       name: "Beefeater Pink Gin (100cl)",
       description: "Pink gin",
-      price: "Bottle: 10,975br | Glass: 355br",
+      price: "Bottle: 11,350br | Glass: 395br",
       image: "/beefeater-pink-gin-100cl.png",
     },
     {
       name: "Bombay Sapphire (70cl)",
       description: "Premium gin",
-      price: "Bottle: 12,100br | Glass: 355br",
+      price: "Bottle: 12,250br | Glass: 355br",
       image: "/bombay-sapphire-70cl.png",
     },
     {
       name: "Gordon's Gin",
       description: "Classic gin",
-      price: "Bottle: 9,997br | Glass: 315br",
+      price: "Bottle: 10,225br | Glass: 375br",
       image: "/gordons-gin.png",
     },
     {
       name: "Bacardi White (100cl)",
       description: "White rum",
-      price: "Bottle: 15,011br | Glass: 370br",
+      price: "Bottle: 15,200br | Glass: 415br",
       image: "/bacardi-white-100cl.png",
     },
     {
       name: "Bacardi Gold (100cl)",
       description: "Gold rum",
-      price: "Bottle: 14,221br | Glass: 350br",
+      price: "Bottle: 14,390br | Glass: 379br",
       image: "/bacardi-gold-100cl.png",
     },
     {
       name: "Captain Morgan (100cl)",
       description: "Spiced rum",
-      price: "Bottle: 14,150br | Glass: 350br",
+      price: "Bottle: 14,290br | Glass: 379br",
       image: "/captain-morgan-100cl.png",
     },
     {
       name: "Malibu (100cl)",
       description: "Coconut rum",
-      price: "Bottle: 5,525br | Glass: 200br",
+      price: "Bottle: 5,700br | Glass: 225br",
       image: "/malibu-100cl.png",
     },
     {
       name: "J.W Black Label (50cl, 100cl)",
       description: "Premium whiskey",
-      price: "Bottle: 7,700br for 50cl/6,995br for 100cl | Glass: 375br",
+      price: "Bottle: 6,445br for 50cl/14998br for 100cl | Glass:500br",
       image: "/jw-black-label-50cl-100cl.png",
     },
     {
       name: "J.W Double Black Label (50cl, 100cl)",
       description: "Premium whiskey",
-      price: "Bottle: 7,905br for 50cl/20,000br for 100cl | Glass: 405br",
+      price: "Bottle: 7,995 for 50cl /17,661br for 100cl | Glass: 425br",
       image: "/jw-double-black-label-50cl-100cl.png",
     },
     {
       name: "J.W Blue Label (100cl)",
       description: "Ultra premium whiskey",
-      price: "Bottle: 97,997br | Glass: 4,154br",
+      price: "Bottle: 80,452br | Glass: 3750br",
       image: "/jw-blue-label-100cl.png",
     },
     {
       name: "J.W Gold Label (100cl)",
       description: "Premium whiskey",
-      price: "Bottle: 23,990br | Glass: 555br",
+      price: "Bottle: 21,012br | Glass: 625br",
       image: "/jw-gold-label-100cl.png",
     },
     {
       name: "J.W Red Label (50cl, 100cl)",
       description: "Classic whiskey",
-      price: "Bottle: 6,933br for 50cl/11,000br for 100cl | Glass: 295br",
+      price: "Bottle: 5,733 for 50cl/9,907br | Glass: 299br",
       image: "/jw-red-label-50cl-100cl.png",
     },
     {
       name: "Jack Daniel's (50cl, 100cl)",
       description: "Tennessee whiskey",
-      price: "Bottle: 6,500br for 50cl/15,000br for 100cl| Glass: 355br",
+      price: "Bottle: 4,922/14,280br | Glass: 400br",
       image: "/jack-daniels-50cl-100cl.png",
     },
     {
       name: "Chivas 12 (50cl, 100cl)",
       description: "Premium scotch",
-      price: "Bottle: 15,700br | Glass: 395br",
+      price: "Bottle: 14,542br | Glass: 425br",
       image: "/chivas-12-50cl-100cl.png",
     },
     {
       name: "Glenfiddich 15 (100cl)",
       description: "Single malt scotch",
-      price: "Bottle: 28,500br | Glass: 700br",
+      price: "Bottle: 25,636br | Glass: 675br",
       image: "/glenfiddich-15-100cl.png",
     },
     {
       name: "Glenfiddich 18 (75cl)",
       description: "Aged single malt",
-      price: "Bottle: 39,900br | Glass: 1,000br",
+      price: "Bottle: 35,411br | Glass: 795br",
       image: "/glenfiddich-18-75cl.png",
     },
     {
       name: "Glenfiddich 21 (70cl)",
       description: "Ultra premium single malt",
-      price: "Bottle: 59,900br | Glass: 1,100br",
+      price: "Bottle: 52,094br | Glass: 890br",
       image: "/glenfiddich-21-70cl.png",
     },
     {
       name: "Dimple 15 (100cl)",
       description: "Premium scotch",
-      price: "Bottle: 27,500br | Glass: 455br",
+      price: "Bottle: 19,833br | Glass: 500br",
       image: "/dimple-15-100cl.png",
     },
     {
       name: "White Horse (100cl)",
       description: "Classic scotch",
-      price: "Bottle: 8,900br | Glass: 250br",
+      price: "Bottle: 9,255br | Glass: 300br",
       image: "/white-horse-100cl.png",
     },
     {
-      name: "Absolut (50cl, 100cl)",
+      name: "Absolute Vodka (50cl, 100cl)",
       description: "Premium vodka",
-      price: "Bottle: 3,950br for 50cl/6,970br for 100cl | Glass: 275br",
+      price: "Bottle: 4015 for 50cl/7505br for 100 cl| Glass: 300br",
       image: "/absolut-50cl-100cl.png",
     },
     {
       name: "Grey Goose (100cl)",
       description: "Ultra premium vodka",
-      price: "Bottle: 10,997br | Glass: 399br",
+      price: "Bottle: 11,200br | Glass: 435br",
       image: "/grey-goose-100cl.png",
     },
     {
       name: "Ciroc Blue (100cl)",
       description: "Premium vodka",
-      price: "Bottle: 10,500br | Glass: 275br",
+      price: "Bottle: 10,675br | Glass: 395br",
       image: "/ciroc-blue-100cl.png",
     },
     {
       name: "Smirnoff (75cl)",
       description: "Classic vodka",
-      price: "Bottle: 3,475br | Glass: 200br",
+      price: "Bottle: 3,599br | Glass: 225br",
       image: "/smirnoff-75cl.png",
     },
     {
       name: "Stolichnaya Gold (100cl)",
       description: "Premium vodka",
-      price: "Bottle: 7,509br | Glass: 315br",
+      price: "Bottle: 7,625br | Glass: 360br",
       image: "/stolichnaya-gold-100cl.png",
     },
     {
       name: "Stolichnaya Elite (100cl)",
       description: "Ultra premium vodka",
-      price: "Bottle: 10,999br | Glass: 367br",
+      price: "Bottle: 11,100br | Glass: 425br",
       image: "/stolichnaya-elite-100cl.png",
     },
     {
       name: "Stolichnaya Vodka (50cl, 75cl)",
       description: "Classic vodka",
-      price: "Bottle: 3,900br for 50cl/6,195br for 100cl | Glass: 295br",
+      price: "Bottle: 3,955br for 50cl/6,357br for 75cl | Glass: 295br",
       image: "/stolichnaya-vodka-50cl-75cl.png",
     },
     {
       name: "Sky Vodka (100cl)",
       description: "Premium vodka",
-      price: "Bottle: 3,870br | Glass: 200br",
+      price: "Bottle: 3,557br | Glass: 200br",
       image: "/sky-vodka-100cl.png",
     },
     {
       name: "Russian Standard Vodka (100cl)",
       description: "Premium vodka",
-      price: "Bottle: 8,015br | Glass: 295br",
+      price: "Bottle: 8,155br | Glass: 325br",
       image: "/russian-standard-vodka-100cl.png",
     },
     {
       name: "Winter Palace",
       description: "Premium vodka",
-      price: "Bottle: 4,764br | Glass: 200br",
+      price: "Bottle: 4,890br | Glass: 300br",
       image: "/winter-palace.png",
     },
     {
       name: "Ketel One Vodka (75cl)",
       description: "Premium vodka",
-      price: "Bottle: 7,897br | Glass: 275br",
+      price: "Bottle: 8,000br | Glass: 300br",
       image: "/ketel-one-vodka-75cl.png",
     },
     {
@@ -814,7 +778,7 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Drambuie (100cl)",
       description: "Scotch liqueur",
-      price: "Bottle: 8,988br | Glass: 325br",
+      price: "Bottle: 8.988br | Glass: 325br",
       image: "/drambuie-100cl.png",
     },
     {
@@ -874,37 +838,25 @@ const menuData: Record<string, MenuItem[]> = {
       price: "700",
       image: "/red-bull.png",
     },
-    {
-      name: "Virgin Mojito",
-      description:
-        "Tonic water, sprite, soda water, lemon juice, sugar, mint leaves",
-      price: "350",
-      image: "/virgin-mojito.png",
-    },
-    {
-      name: "Virgin Sour",
-      description: "Watermelon juice, orange juice, lemon juice, simple syrup",
-      price: "350",
-      image: "/virgin-sour.png",
-    },
+   
   ],
   "hot-drinks": [
     {
       name: "Tea",
       description: "Traditional tea",
-      price: "79.05",
+      price: "94.86",
       image: "/tea.png",
     },
     {
       name: "Coffee",
       description: "Freshly brewed coffee",
-      price: "118.57",
+      price: "134.38",
       image: "/coffee.png",
     },
     {
       name: "Café Americano",
       description: "Classic American coffee",
-      price: "125",
+      price: "150",
       image: "/café-americano.png",
     },
     {
@@ -922,7 +874,7 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Teas with Coffee",
       description: "Tea and coffee blend",
-      price: "94.86",
+      price: "118.57",
       image: "/teas-with-coffee.png",
     },
     {
@@ -934,25 +886,25 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Coffee Latte",
       description: "Espresso with steamed milk",
-      price: "118.57",
+      price: "135",
       image: "/coffee-latte.png",
     },
     {
       name: "Double Espresso",
       description: "Strong double shot espresso",
-      price: "197.62",
+      price: "237",
       image: "/double-espresso.png",
     },
     {
       name: "Masala Tea",
       description: "Spiced Indian tea",
-      price: "197.62",
+      price: "237.14",
       image: "/masala-tea.png",
     },
     {
       name: "Fasting Macchiato",
       description: "Special fasting macchiato",
-      price: "197.62",
+      price: "237.14",
       image: "/fasting-macchiato.png",
     },
     {
@@ -964,13 +916,13 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Tea with Milk",
       description: "Tea with fresh milk",
-      price: "146.24",
+      price: "210",
       image: "/tea-with-milk.png",
     },
     {
       name: "Cappuccino",
       description: "Espresso with foamed milk",
-      price: "197.62",
+      price: "237.14",
       image: "/cappuccino.png",
     },
     {
@@ -982,131 +934,150 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Coffee with Milk",
       description: "Coffee with fresh milk",
-      price: "197.62",
+      price: "237.14",
       image: "/coffee-with-milk.png",
     },
     {
       name: "Special Tea",
       description: "House special tea blend",
-      price: "197.62",
+      price: "237.14",
       image: "/special-tea.png",
     },
     {
       name: "Fresh Ginger Tea",
       description: "Fresh ginger tea",
-      price: "197.62",
+      price: "237.14",
       image: "/fresh-ginger-tea.png",
     },
   ],
   "cocktails and mocktails": [
-    {
-      name: "Mumbai sour",
-      description: "",
-      price: "715br",
-      image: "/Mumbai sour.webp",
+    // {
+    //   name: "Mumbai sour",
+    //   description: "",
+    //   price: "715br",
+    //   image: "/Mumbai sour.webp",
+    // },
+    // {
+    //   name: "Gulaab Sour",
+    //   description: "",
+    //   price: "715br",
+    //   image: "/Gulaab Sour.webp",
+    // },
+    // {
+    //   name: "Fennel Collins",
+    //   description: "",
+    //   price: "715br",
+    //   image: "/Fennel Collins.webp",
+    // },
+    // {
+    //   name: "Jaljeera Mojito",
+    //   description: "",
+    //   price: "715br",
+    //   image: "/Jaljeera Mojito.webp",
+    // },
+    // {
+    //   name: "Dehli Martini",
+    //   description: "",
+    //   price: "715br",
+    //   image: "/Dehli Martini.webp",
+    // },
+    // {
+    //   name: "John Collins",
+    //   description: "",
+    //   price: "695br",
+    //   image: "/John Collins.webp",
+    // },
+    // {
+    //   name: "Whiskey Sour",
+    //   description: "",
+    //   price: "695br",
+    //   image: "/Whiskey Sour.webp",
+    // },
+    // {
+    //   name: "Americano",
+    //   description: "",
+    //   price: "715br",
+    //   image: "/Americano.webp",
+    // },
+    // {
+    //   name: "Mojito",
+    //   description: "",
+    //   price: "695br",
+    //   image: "/Mojito.webp",
+    // },
+    // {
+    //   name: "Rusty Nails",
+    //   description: "",
+    //   price: "695br",
+    //   image: "/Rusty Nails.webp",
+    // },
+    // {
+    //   name: "Godfather",
+    //   description: "",
+    //   price: "695br",
+    //   image: "/Godfather.webp",
+    // },
+      {
+      name: "Vodka Sour",
+      description: "Vodka, lemon juice, simple syrup",
+      price: "775",
+      image: "/Vodka Sour.webp",
     },
     {
-      name: "Gulaab Sour",
-      description: "",
-      price: "715br",
-      image: "/Gulaab Sour.webp",
+      name: "Rum Sour",
+      description: "Rum, lemon juice, simple syrup",
+      price: "795",
+      image: "/Rum Sour.webp",
     },
     {
-      name: "Fennel Collins",
-      description: "",
-      price: "715br",
-      image: "/Fennel Collins.webp",
+      name: "Negroni",
+      description: "Gin, Campari, Martini Rosso",
+      price: "799",
+      image: "/Negroni.webp",
     },
     {
-      name: "Jaljeera Mojito",
-      description: "",
-      price: "715br",
-      image: "/Jaljeera Mojito.webp",
-    },
-    {
-      name: "Dehli Martini",
-      description: "",
-      price: "715br",
-      image: "/Dehli Martini.webp",
-    },
-    {
-      name: "John Collins",
-      description: "",
-      price: "695br",
-      image: "/John Collins.webp",
-    },
-    {
-      name: "Whiskey Sour",
-      description: "",
-      price: "695br",
-      image: "/Whiskey Sour.webp",
-    },
-    {
-      name: "Americano",
-      description: "",
-      price: "715br",
-      image: "/Americano.webp",
-    },
-    {
-      name: "Mojito",
-      description: "",
-      price: "695br",
-      image: "/Mojito.webp",
-    },
-    {
-      name: "Rusty Nails",
-      description: "",
-      price: "695br",
-      image: "/Rusty Nails.webp",
-    },
-    {
-      name: "Godfather",
-      description: "",
-      price: "695br",
-      image: "/Godfather.webp",
+      name: "Long Island",
+      description: "Vodka, rum, gin, triple sec, lemon juice, simple syrup",
+      price: "999",
+      image: "/Long Island.webp",
     },
     {
       name: "B-52",
       description: "",
-      price: "599br",
+      price: "735br",
       image: "/B-52.webp",
     },
     {
       name: "Chocolate martini",
       description: "",
-      price: "890br",
+      price: "875br",
       image: "/Chocolate martini.webp",
     },
     {
       name: "Tequilla Sunrise",
       description: "",
-      price: "655br",
+      price: "715br",
       image: "/Tequilla Sunrise.webp",
     },
     {
       name: "Gin Fizz",
       description: "",
-      price: "700br",
+      price: "655br",
       image: "/Gin Fizz.webp",
     },
     {
       name: "Sangria",
       description: "",
-      price: "995br",
+      price: "950br",
       image: "/Sangria.webp",
     },
     {
       name: "Black Russia",
       description: "",
-      price: "750br",
+      price: "635br",
       image: "/Black Russia.webp",
     },
-    {
-      name: "Gin Fizz",
-      description: "",
-      price: "700br",
-      image: "/Gin Fizz.webp",
-    },
+ 
     {
       name: "Blue Monday",
       description: "",
@@ -1116,15 +1087,28 @@ const menuData: Record<string, MenuItem[]> = {
     {
       name: "Kamikaze",
       description: "",
-      price: "630br",
+      price: "875br",
       image: "/Kamikaze.webp",
     },
-    {
-      name: "Tejito",
-      description: "",
-      price: "695br",
-      image: "/Tejito.webp",
+     {
+      name: "Virgin Mojito",
+      description:
+        "Tonic water, sprite, soda water, lemon juice, sugar, mint leaves",
+      price: "350",
+      image: "/Virgin mojito.webp",
     },
+    {
+      name: "Virgin Sour",
+      description: "Watermelon juice, orange juice, lemon juice, simple syrup",
+      price: "350",
+      image: "/Virgin sour.webp",
+    },
+    // {
+    //   name: "Tejito",
+    //   description: "",
+    //   price: "695br",
+    //   image: "/Tejito.webp",
+    // },
   ],
   // drinks: [
   //   {
@@ -1531,30 +1515,7 @@ const menuData: Record<string, MenuItem[]> = {
   //   },
   // ],
   // cocktails: [
-  //   {
-  //     name: "Vodka Sour",
-  //     description: "Vodka, lemon juice, simple syrup",
-  //     price: "595",
-  //     image: "/vodka-sour.png",
-  //   },
-  //   {
-  //     name: "Rum Sour",
-  //     description: "Rum, lemon juice, simple syrup",
-  //     price: "595",
-  //     image: "/rum-sour.png",
-  //   },
-  //   {
-  //     name: "Negroni",
-  //     description: "Gin, Campari, Martini Rosso",
-  //     price: "655",
-  //     image: "/negroni.png",
-  //   },
-  //   {
-  //     name: "Long Island",
-  //     description: "Vodka, rum, gin, triple sec, lemon juice, simple syrup",
-  //     price: "655",
-  //     image: "/long-island.png",
-  //   },
+  
   //   {
   //     name: "Gin Fizz",
   //     description:
@@ -2191,39 +2152,33 @@ const menuData: Record<string, MenuItem[]> = {
 
   kids: [
     {
-      name: "Beef Wrap",
-      description:
-        "Beef fillet, Onion, Garlic, Green Chilli, Cream, Cheese served with French Fries",
-      price: "450",
-      image: "/beef wrap.webp",
+      name: "French Fries",
+      description: "",
+      price: "306",
+      image: "/french fries.webp",
     },
     {
       name: "Chicken Wrap",
       description:
         "Grilled Chcken, Onion, Garlic, Green Chilli, Fresh Cream, Cheese served with French Fries",
-      price: "350",
+      price: "420",
       image: "/chicken wrap.webp",
     },
     {
       name: "Two Mini Beef Burgers",
       description:
         "Minced Beef, Egg, Garlic, Bread crumbs, mixed spice, with French Fries",
-      price: "750",
+      price: "900",
       image: "/two mini beef burger.webp",
     },
-    {
-      name: "Vegetable Wrap",
-      description:
-        "Seasonal Vegetable, Onion, Garlic, Green Chilli, Fresh Cream, Cheese served with French Fries",
-      price: "400",
-      image: "/vegetable wrap.webp",
-    },
-    {
-      name: "French Fries",
-      description: "Crispy golden French fries",
-      price: "390",
-      image: "/french fries.webp",
-    },
+
+    // {
+    //   name: "Vegetable Wrap",
+    //   description:
+    //     "Seasonal Vegetable, Onion, Garlic, Green Chilli, Fresh Cream, Cheese served with French Fries",
+    //   price: "400",
+    //   image: "/vegetable wrap.webp",
+    // },
   ],
 };
 
@@ -2285,7 +2240,7 @@ const applyRoomServiceMarkup = (input: string): string => {
     if (isNaN(numeric)) return numStr;
 
     // Apply 17% markup
-    const updated = Math.round(numeric * 1.2);
+    const updated = Math.round(numeric * 1.17);
 
     // Return with comma formatting
     return updated.toLocaleString();
@@ -2398,10 +2353,7 @@ export function OakMenuSection({ activeTab }: { activeTab: string }) {
                   </div>
                   <div className="flex items-center justify-between mt-4 pt-4 border-t border-amber-500/30">
                     <span className="font-serif text-2xl font-bold text-amber-500">
-                      {usePathname() === "/oak-restaurant"
-                        ? item.price
-                        : applyRoomServiceMarkup(item.price)}{" "}
-                      ETB
+                      {item.price} ETB
                     </span>
                     {/*<Button
                                       onClick={() => handleOrder(item.name)}

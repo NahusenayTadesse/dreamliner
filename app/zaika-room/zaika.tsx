@@ -110,7 +110,7 @@ export default function ZaikaRoomPage() {
               View Room Service Menu
             </Button>
             <Button
-              onClick={() => window.open("tel:+251 985 767 380")}
+              onClick={() => window.open("tel:901794194")}
               size="lg"
               variant="outline"
               className="border-2 border-border hover:border-primary hover:bg-primary hover:text-primary-foreground px-10 py-6 text-sm font-medium uppercase tracking-wider transition-all duration-300 font-sans"
@@ -158,11 +158,12 @@ export default function ZaikaRoomPage() {
               "main courses",
 
               "vegetarian",
+              "vegan",
               "biryanis",
               "breads",
               "desserts",
-              "vegan",
-              "cocktails and cocktails",
+
+              "cocktails and mocktails",
               "signature cocktails",
 
               "beers and cider",
@@ -256,14 +257,14 @@ export default function ZaikaRoomPage() {
             >
               {" "}
               <a
-                href="tel:0985 767 380"
+                href="tel:0901794194"
                 className="text-foreground/70 hover:text-primary transition-colors text-sm font-sans"
               >
                 <Phone className="w-6 h-6 mx-auto mb-3 text-primary" />
                 <h3 className="font-serif font-semibold mb-2 text-foreground text-sm uppercase tracking-wider">
                   Phone
                 </h3>
-                +251 985 767 380
+                +251 901794194
               </a>
             </motion.div>
 

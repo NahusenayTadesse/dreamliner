@@ -10,7 +10,7 @@ import { LoadingScreen } from "@/components/loading-screen";
 import {
   OakMenuSection as OakRoomMenuSection,
   categories as oakRoomCategories,
-} from "@/components/oakRoom";
+} from "@/components/RoomOak";
 
 export default function OakRoomPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -87,7 +87,7 @@ export default function OakRoomPage() {
               variant="outline"
               className="border-2 border-amber-500/60 text-amber-100 hover:bg-amber-500 hover:text-slate-900 px-10 py-6 text-sm font-medium uppercase tracking-wider"
             >
-              <a href="tel:0985 767 380">Call Room Service</a>
+              <a href="tel:+251 98 576 7360">Call Room Service</a>
             </Button>
           </motion.div>
         </div>
@@ -163,7 +163,7 @@ export default function OakRoomPage() {
                 <div className="flex items-center justify-center gap-3">
                   <Phone className="w-5 h-5 text-amber-500" />
                   <span className="text-lg text-amber-100">
-                    <a href="tel:+251 985 767 380">+251 985 767 380</a>
+                    <a href="tel:+251 98 576 7360">+251 98 576 7360</a>
                   </span>
                 </div>
                 <div className="flex items-center justify-center gap-3">

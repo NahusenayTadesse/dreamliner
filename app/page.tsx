@@ -165,10 +165,11 @@ export default function Home() {
               "main courses",
 
               "vegetarian",
+              "vegan",
               "biryanis",
               "breads",
               "desserts",
-              "vegan",
+
               "cocktails and mocktails",
               "signature cocktails",
 
@@ -261,14 +262,14 @@ export default function Home() {
             >
               {" "}
               <a
-                href="tel:0985 767 380"
+                href="tel:0901794194"
                 className="text-foreground/70 hover:text-primary transition-colors text-sm font-sans"
               >
                 <Phone className="w-6 h-6 mx-auto mb-3 text-primary" />
                 <h3 className="font-serif font-semibold mb-2 text-foreground text-sm uppercase tracking-wider">
                   Phone
                 </h3>
-                +251 985 767 380
+                +251 0901794194
               </a>
             </motion.div>
 
