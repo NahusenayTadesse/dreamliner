@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import {  ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -21,7 +21,7 @@ export const menuData: Record<string, MenuItem[]> = {
       name: "Non-V Thali",
       description: "Chicken, lamb, dal, rice, roti naan",
       price: "1790br",
-      image: "/Non V thali.webp",
+      image: "/NON- Veg Thali.webp",
       isSpecial: true,
     },
     {
@@ -350,7 +350,7 @@ export const menuData: Record<string, MenuItem[]> = {
       name: "Gulab Jamun",
       description: "Milk, sweet syrup",
       price: "500br",
-      image: "/Gulab Jamun.webp",
+      image: "/GulabJamun.webp",
     },
     {
       name: "Kulfi",
@@ -508,7 +508,7 @@ export const menuData: Record<string, MenuItem[]> = {
       name: "Negroni",
       description: "",
       price: "715br",
-      image: "/Negroni.webp",
+      image: "/Negroni (1).webp",
     },
     {
       name: "Long Island",
@@ -950,19 +950,19 @@ export const menuData: Record<string, MenuItem[]> = {
       name: "Mumbai sour",
       description: "",
       price: "715br",
-      image: "/Mumbai sour.webp",
+      image: "/Mumbai sour (1).webp",
     },
     {
       name: "Gulaab Sour",
       description: "",
       price: "715br",
-      image: "/Gulaab Sour.webp",
+      image: "/Gulaab sour.webp",
     },
     {
       name: "Fennel Collins",
       description: "",
       price: "715br",
-      image: "/Fennel Collins.webp",
+      image: "/Fennel Collins (1).webp",
     },
     {
       name: "Jaljeera Mojito",
@@ -971,10 +971,10 @@ export const menuData: Record<string, MenuItem[]> = {
       image: "/Jaljeera Mojito.webp",
     },
     {
-      name: "Dehli Martini",
+      name: "Delhi Martini",
       description: "",
       price: "715br",
-      image: "/Dehli Martini.webp",
+      image: "/Delhi Martini.webp",
     },
     {
       name: "John Collins",
@@ -1378,13 +1378,13 @@ export const menuData: Record<string, MenuItem[]> = {
       name: "Lassi",
       description: "",
       price: "135br",
-      image: "/Plain Lassi.webp",
+      image: "/LAssi.webp",
     },
     {
       name: "Mango Lassi",
       description: "",
       price: "135br",
-      image: "/Mango lassi.webp",
+      image: "/Lassi 2 (1).webp",
     },
     {
       name: "Juices",

@@ -302,7 +302,7 @@ const menuData: Record<string, MenuItem[]> = {
       description:
         "Dice cut beef fillet with Ethiopian spiced butter sauted with Garlic, diced onion, Green pepper, tomatoes & served with traditional roll of Injera",
       price: "715",
-      image: "/Chicken Tibs.webp",
+      image: "/chikna.webp",
     },
     {
       name: "Special Shiro",
@@ -431,7 +431,7 @@ const menuData: Record<string, MenuItem[]> = {
       name: "Special Assorted Canapés",
       description: "Selection of assorted canapés",
       price: "399",
-      image: "/Tuna Canapés.webp",
+      image: "/specialcanape.webp",
     },
     {
       name: "Meat Kebab with French Fries",

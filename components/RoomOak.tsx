@@ -266,7 +266,7 @@ const menuData: Record<string, MenuItem[]> = {
       description:
         "Dice cut beef fillet with Ethiopian spiced butter sauted with Garlic, diced onion, Green pepper, tomatoes & served with traditional roll of Injera",
       price: "858",
-      image: "/Chicken Tibs.webp",
+      image: "/chikna.webp",
     },
     {
       name: "Special Shiro",
@@ -395,7 +395,7 @@ const menuData: Record<string, MenuItem[]> = {
       name: "Special Assorted Canapés",
       description: "Selection of assorted canapés",
       price: "399",
-      image: "/Tuna Canapés.webp",
+      image: "/specialcanape.webp",
     },
     {
       name: "Meat Kebab with French Fries",
@@ -838,7 +838,6 @@ const menuData: Record<string, MenuItem[]> = {
       price: "700",
       image: "/red-bull.png",
     },
-   
   ],
   "hot-drinks": [
     {
@@ -1017,7 +1016,7 @@ const menuData: Record<string, MenuItem[]> = {
     //   price: "695br",
     //   image: "/Godfather.webp",
     // },
-      {
+    {
       name: "Vodka Sour",
       description: "Vodka, lemon juice, simple syrup",
       price: "775",
@@ -1077,7 +1076,7 @@ const menuData: Record<string, MenuItem[]> = {
       price: "635br",
       image: "/Black Russia.webp",
     },
- 
+
     {
       name: "Blue Monday",
       description: "",
@@ -1090,7 +1089,7 @@ const menuData: Record<string, MenuItem[]> = {
       price: "875br",
       image: "/Kamikaze.webp",
     },
-     {
+    {
       name: "Virgin Mojito",
       description:
         "Tonic water, sprite, soda water, lemon juice, sugar, mint leaves",
@@ -1515,7 +1514,7 @@ const menuData: Record<string, MenuItem[]> = {
   //   },
   // ],
   // cocktails: [
-  
+
   //   {
   //     name: "Gin Fizz",
   //     description:
